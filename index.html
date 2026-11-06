@@ -213,6 +213,15 @@ h1.name em{font-style:italic;color:var(--accent)}
 .case:hover .chip{border-color:var(--rule-2);color:var(--ink)}
 .figs{display:flex;flex-wrap:wrap;gap:14px 38px}
 .fig b{display:block;font-family:var(--serif);font-size:2rem;line-height:1.1;color:var(--accent)}
+.shot{display:block;position:relative;z-index:1;margin:0 0 34px;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--bg)}
+.shot img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.shot:hover img{transform:scale(1.015)}
+.proj-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding-top:24px;border-top:1px solid var(--rule);position:relative;z-index:1}
+.proj-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;border:1px solid var(--rule-2);
+  color:var(--ink);text-decoration:none;font-family:var(--mono);font-size:.74rem;transition:.25s;white-space:nowrap}
+.proj-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--surface-2)}
+.proj-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj-btn.primary:hover{background:var(--accent-2);color:#fff}
 .fig span{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .locked{margin-top:34px;padding-top:19px;border-top:1px solid var(--rule);
   display:flex;align-items:center;gap:11px;position:relative;z-index:1;
@@ -457,13 +466,56 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
     <div class="sec-head rv">
       <span class="sec-num">01</span>
       <h2 class="sec-title" data-ar="الأعمال <em>المختارة</em>">Selected <em>Work</em></h2>
-      <p class="sec-sub" data-ar="أنظمة بُنيت داخل عمليات حج حيّة، حيث الموعد النهائي هو الموسم نفسه.">Systems built inside live Hajj operations, where the deadline is the season itself.</p>
+      <p class="sec-sub" data-ar="مشروع تحليلي كامل ومتاح للعامة، وأنظمة بُنيت داخل عمليات حج حيّة حيث الموعد النهائي هو الموسم نفسه.">A public, end-to-end analytics project, plus systems built inside live Hajj operations, where the deadline is the season itself.</p>
     </div>
     <hr class="rule sec-rule rv">
 
     <!-- 01 -->
     <article class="case rv">
       <span class="case-idx">01</span>
+      <div class="case-top">
+        <h3 data-ar="لوحة أداء التوصيل — Olist">Olist Delivery Performance</h3>
+        <span class="tag" data-ar="مشروع عام · Power BI">Public project · Power BI</span>
+      </div>
+      <p class="lede" data-ar="داشبورد Power BI يحلل حوالي 96 ألف طلب من متجر إلكتروني برازيلي، ليجاوب على سؤال واحد: كم مرة تتأخر الطلبات، وليش، وكم يكلّف هذا التأخير من رضا العميل.">
+        A Power BI dashboard analysing ~96,000 delivered orders from a Brazilian e-commerce marketplace,
+        to answer one question: how often do orders arrive late, why, and what does it cost in customer satisfaction?
+      </p>
+      <a class="shot" href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener">
+        <img src="images/olist-overview.jpg" alt="Overview page of the Olist Delivery Performance dashboard" loading="lazy">
+      </a>
+      <div class="grid">
+        <div class="blk"><h4 data-ar="أبرز النتائج">Key findings</h4>
+          <ul data-ar="<li>8.1% من الطلبات توصل متأخرة، وتقييمها 2.6 من 5 مقابل 4.3 للطلبات اللي وصلت في وقتها</li><li>الشحن هو سبب أغلب التأخير: 25 يوم في الشحن مقابل 7 للطلبات العادية</li><li>الطلبات بين ولايتين تتأخر أكثر بحوالي 50%، والتأخير يقفز في مواسم الذروة</li><li>الطلب اللي يمسكه البائع 11 يوم أو أكثر يتأخر 38% من المرات</li>">
+            <li>8.1% of orders arrive late, and they are rated 2.6 / 5 vs 4.3 for on-time orders</li>
+            <li>Shipping drives most of the delay: 25 days in transit vs 7 for on-time orders</li>
+            <li>Cross-state orders are late about 50% more often, and delays spike in peak seasons</li>
+            <li>Orders held by the seller for 11+ days are late 38% of the time</li>
+          </ul></div>
+        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
+          <ul data-ar="<li>تنظيف البيانات في Power Query، مع معالجة حوالي 1,350 طلب فيها تواريخ مستحيلة بدل حذفها</li><li>موديل Star schema ومقاييس DAX لنسبة التأخير والتقييم ومراحل التوصيل</li><li>داشبورد من 3 صفحات بفلاتر مشتركة وأزرار تنقل وعناوين تقول النتيجة</li><li>توصيات عملية لفريق العمليات</li>">
+            <li>Data cleaning in Power Query, fixing ~1,350 orders with impossible timestamps instead of deleting them</li>
+            <li>A star-schema model and DAX measures for late rate, ratings and delivery stages</li>
+            <li>A 3-page dashboard with synced filters, page navigation and finding-led chart titles</li>
+            <li>Practical recommendations for an operations team</li>
+          </ul></div>
+        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
+          <span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span>
+          <span class="chip">Data Modeling</span></div></div>
+        <div class="blk"><h4 data-ar="الحجم">Scale</h4><div class="figs">
+          <div class="fig"><b>96K</b><span data-ar="طلب">orders</span></div>
+          <div class="fig"><b>5</b><span data-ar="جداول">tables</span></div>
+          <div class="fig"><b>3</b><span data-ar="صفحات">pages</span></div></div></div>
+      </div>
+      <div class="proj-links">
+        <a class="proj-btn primary" href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener" data-ar="عرض المشروع على GitHub ↗">View on GitHub ↗</a>
+        <a class="proj-btn" href="https://github.com/DsMohammedHarbi/olist-delivery-performance/blob/main/olist_operations.pdf" target="_blank" rel="noopener" data-ar="الداشبورد PDF ↗">Dashboard PDF ↗</a>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="case rv">
+      <span class="case-idx">02</span>
       <div class="case-top">
         <h3 data-ar="الإسناد — منصة إسناد الرحلات">Isnad — Trip Assignment Platform</h3>
         <span class="tag" data-ar="زمام القوة · حاج بلا حقيبة">Zimam Al Quwa · Hajj Without Bags</span>
@@ -499,9 +551,9 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
       </div>
     </article>
 
-    <!-- 02 -->
+    <!-- 03 -->
     <article class="case rv">
-      <span class="case-idx">02</span>
+      <span class="case-idx">03</span>
       <div class="case-top">
         <h3 data-ar="نظام تنظيف بيانات الحج">Hajj Data Cleaning System</h3>
         <span class="tag" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</span>
@@ -536,9 +588,9 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
       </div>
     </article>
 
-    <!-- 03 -->
+    <!-- 04 -->
     <article class="case rv">
-      <span class="case-idx">03</span>
+      <span class="case-idx">04</span>
       <div class="case-top">
         <h3 data-ar="إمتثال — مساحة عمل الفريق الداخلية">Imtithal — Internal Team Workspace</h3>
         <span class="tag" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</span>
@@ -569,9 +621,9 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
       </div>
     </article>
 
-    <!-- 04 -->
+    <!-- 05 -->
     <article class="case rv">
-      <span class="case-idx">04</span>
+      <span class="case-idx">05</span>
       <div class="case-top">
         <h3 data-ar="بيان الأركاب — نظام الحضور">Bayan Al-Arkab — Attendance System</h3>
         <span class="tag" data-ar="زمام القوة">Zimam Al Quwa</span>
@@ -605,9 +657,9 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
       </div>
     </article>
 
-    <!-- 05 -->
+    <!-- 06 -->
     <article class="case rv">
-      <span class="case-idx">05</span>
+      <span class="case-idx">06</span>
       <div class="case-top">
         <h3 data-ar="أداة جدولة الرحلات التشغيلية">Operational Trip Scheduling Tool</h3>
         <span class="tag" data-ar="أداة تعمل في المتصفح">Browser-based utility</span>
