@@ -4,380 +4,318 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohammed Alharbi — Data Analyst</title>
-<meta name="description" content="Data Analyst. Two Hajj seasons on national-scale operations. Python, SQL, Excel — and the tools built when the manual process could not keep up.">
-<!-- ⚠️ بدّل dsmohammedharbi باسم حساب GitHub بعد إنشائه -->
+<meta name="description" content="Data Analyst in Makkah, Saudi Arabia. Power BI dashboards, SQL, Python and Excel — with two Hajj seasons of hands-on operational data experience.">
 <link rel="canonical" href="https://dsmohammedharbi.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dsmohammedharbi.github.io/">
 <meta property="og:title" content="Mohammed Alharbi — Data Analyst">
-<meta property="og:description" content="Messy data → reliable decisions. Python, SQL, Excel. Two Hajj seasons on large-scale operational programs.">
+<meta property="og:description" content="Power BI, SQL, Python and Excel. Two Hajj seasons on large-scale operational programs.">
 <meta property="og:image" content="https://dsmohammedharbi.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mohammed Alharbi — Data Analyst">
-<meta name="twitter:description" content="Messy data → reliable decisions. Python, SQL, Excel.">
+<meta name="twitter:description" content="Power BI, SQL, Python and Excel.">
 <meta name="twitter:image" content="https://dsmohammedharbi.github.io/og.png">
-<meta name="theme-color" content="#15161A">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════ tokens ══════════════════ */
 :root{
-  --bg:#15161A; --bg-2:#1B1D22;
-  --surface:#1E2026; --surface-2:#24262D;
-  --ink:#EFEDE8; --ink-2:#A9AFBD; --ink-3:#767C8B;
-  --rule:#2C2F37; --rule-2:#3B3F49;
-  --accent:#E0793F; --accent-2:#EC8B52; --accent-soft:#2E2119;
-  --teal:#4FB3A5; --teal-soft:#16292A;
-  --shadow:rgba(0,0,0,.55);
-  --nav-bg:rgba(21,22,26,.82);
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
-  --max:1180px; --nav-h:68px;
+  --bg:#FFFFFF; --bg-soft:#F6F7F9; --bg-tint:#F1F0FE;
+  --ink:#0F172A; --ink-2:#475569; --ink-3:#94A3B8;
+  --line:#E5E7EB; --line-2:#D6DAE1;
+  --accent:#4F46E5; --accent-2:#4338CA; --accent-soft:#EEF0FF;
+  --good:#059669; --good-soft:#E7F6F0;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px -12px rgba(15,23,42,.12);
+  --shadow-lg:0 2px 4px rgba(15,23,42,.04),0 24px 48px -20px rgba(15,23,42,.22);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-ar:"IBM Plex Sans Arabic","Inter",system-ui,sans-serif;
+  --max:1120px;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s,color .5s}
-::selection{background:var(--accent);color:var(--bg)}
-section{scroll-margin-top:calc(var(--nav-h) + 20px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html[lang="ar"] body{font-family:var(--font-ar)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+::selection{background:var(--accent);color:#fff}
 
-/* ══════════════════ ambient ══════════════════ */
-.wash{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.blot{position:absolute;border-radius:50%;filter:blur(130px);opacity:.85}
-.blot-1{width:56vw;height:56vw;background:radial-gradient(circle,rgba(224,121,63,.16),transparent 65%);
-  top:-20vw;right:-12vw;animation:float1 34s ease-in-out infinite}
-.blot-2{width:48vw;height:48vw;background:radial-gradient(circle,rgba(79,179,165,.13),transparent 65%);
-  top:56vh;left:-16vw;animation:float2 40s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6vw,5vh) scale(1.12)}}
-@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7vw,-6vh) scale(1.1)}}
-.tex{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.35;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
-
-/* ══════════════════ NAV ══════════════════ */
-.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:90;display:flex;align-items:center;
-  background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid transparent;transition:border-color .35s,box-shadow .35s}
-.nav.stuck{border-bottom-color:var(--rule);box-shadow:0 6px 26px -20px var(--shadow)}
-.nav-in{max-width:var(--max);margin:0 auto;padding:0 40px;width:100%;
-  display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);flex-shrink:0}
-.brand .mark{width:30px;height:30px;border-radius:7px;background:var(--accent);color:#fff;
-  display:grid;place-items:center;font-family:var(--serif);font-size:.95rem}
-.brand .bn{font-family:var(--serif);font-size:1.06rem;white-space:nowrap}
-.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
-.nav-links a{display:block;padding:8px 15px;border-radius:100px;text-decoration:none;
-  font-family:var(--mono);font-size:.75rem;color:var(--ink-2);
-  transition:color .25s,background .25s;position:relative}
-.nav-links a:hover{color:var(--ink);background:var(--surface-2)}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.6) blur(14px);
+  -webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s}
+.nav.stuck{border-bottom-color:var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand .mark{width:32px;height:32px;border-radius:9px;background:var(--ink);color:#fff;display:grid;place-items:center;
+  font-size:.9rem;font-weight:700}
+.nav-links{display:flex;gap:4px;list-style:none;margin-inline-start:auto}
+.nav-links a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:.9rem;color:var(--ink-2);
+  font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--ink);background:var(--bg-soft)}
 .nav-links a.active{color:var(--accent)}
-.nav-links a.active::after{content:"";position:absolute;left:15px;right:15px;bottom:2px;height:1px;background:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:9px;flex-shrink:0}
-.icon-btn{min-width:36px;height:36px;padding:0 10px;border-radius:100px;border:1px solid var(--rule);
-  background:transparent;color:var(--ink-2);display:grid;place-items:center;cursor:pointer;transition:.25s;
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.06em}
-.icon-btn:hover{color:var(--accent);border-color:var(--accent);background:var(--surface-2)}
-.icon-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7}
-.nav-cta{padding:9px 20px;border-radius:100px;background:var(--ink);color:var(--bg);
-  text-decoration:none;font-family:var(--mono);font-size:.75rem;transition:.25s;white-space:nowrap}
-.nav-cta:hover{background:var(--accent);color:#fff}
-.nav-cv{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;
-  border:1px solid var(--rule);color:var(--ink-2);text-decoration:none;
-  font-family:var(--mono);font-size:.75rem;transition:.25s;white-space:nowrap}
-.nav-cv:hover{color:var(--accent);border-color:var(--accent);background:var(--surface-2)}
-.nav-cv svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8}
+.nav-right{display:flex;align-items:center;gap:8px}
+.icon-btn{height:38px;min-width:38px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;
+  color:var(--ink);font:600 .85rem var(--font-ar);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.icon-btn:hover{border-color:var(--ink)}
+.icon-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:10px;font-weight:600;
+  font-size:.9rem;text-decoration:none;border:1px solid transparent;transition:.2s;white-space:nowrap;cursor:pointer}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#1E293B;transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--line-2)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-sm{height:38px;padding:0 14px;font-size:.85rem}
 .burger{display:none}
 
-.sheet{position:fixed;inset:0;z-index:95;background:var(--bg);display:flex;flex-direction:column;
-  justify-content:center;gap:6px;padding:0 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
-.sheet.open{opacity:1;visibility:visible}
-.sheet a{font-family:var(--serif);font-size:2.2rem;color:var(--ink);text-decoration:none;
-  padding:12px 0;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;gap:16px}
-.sheet a span{font-family:var(--mono);font-size:.7rem;color:var(--accent)}
-.sheet-close{position:absolute;top:18px;right:32px}
+/* ---------- mobile menu ---------- */
+.sheet{position:fixed;inset:0;z-index:60;background:#fff;padding:90px 28px 28px;display:flex;flex-direction:column;gap:6px;
+  transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.sheet.open{transform:none}
+.sheet a{font-size:1.5rem;font-weight:700;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line)}
+.sheet-close{position:absolute;top:15px;inset-inline-end:24px}
 
-.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:99;
-  background:linear-gradient(90deg,var(--accent),var(--teal))}
+/* ---------- hero ---------- */
+.hero{padding:88px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,70,229,.12),transparent 65%);pointer-events:none}
+html[dir="rtl"] .hero::before{inset:-40% auto auto -10%}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border-radius:100px;background:var(--good-soft);
+  color:var(--good);font-weight:600;font-size:.8rem}
+html[dir="rtl"] .pill{padding:6px 8px 6px 12px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(5,150,105,.18)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:22px 0 14px}
+html[lang="ar"] .hero h1{letter-spacing:0;line-height:1.2}
+.hero h1 span{color:var(--accent)}
+.role{font-size:1.15rem;font-weight:600;color:var(--ink-2)}
+.hero p.lead{margin-top:20px;font-size:1.08rem;color:var(--ink-2);max-width:56ch}
+.hero p.lead strong{color:var(--ink)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{display:inline-flex;align-items:center;padding:5px 11px;border-radius:8px;background:var(--bg-soft);border:1px solid var(--line);
+  font-size:.8rem;font-weight:500;color:var(--ink-2);white-space:nowrap}
+.chip.hl{background:var(--accent-soft);border-color:#D9DCFF;color:var(--accent)}
 
-/* ══════════════════ side dots ══════════════════ */
-.dots{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:80;
-  display:flex;flex-direction:column;gap:16px;align-items:flex-end}
-.dot-link{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
-.dot-link .lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-3);opacity:0;transform:translateX(6px);transition:.28s;white-space:nowrap}
-.dot-link:hover .lbl{opacity:1;transform:none}
-.dot-link .pt{width:7px;height:7px;border-radius:50%;border:1px solid var(--rule-2);background:transparent;transition:.28s}
-.dot-link.active .pt{background:var(--accent);border-color:var(--accent);transform:scale(1.35)}
-.dot-link.active .lbl{opacity:1;transform:none;color:var(--accent)}
+.hero-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow-lg)}
+.hero-card h3{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:16px}
+html[lang="ar"] .hero-card h3{letter-spacing:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--bg-soft);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat span{font-size:.82rem;color:var(--ink-2)}
+.contact-mini{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);display:grid;gap:10px}
+.contact-mini a{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:.9rem;color:var(--ink-2)}
+.contact-mini a:hover{color:var(--accent)}
+.contact-mini svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
 
-/* ══════════════════ layout ══════════════════ */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 40px;position:relative;z-index:2}
-section{position:relative;z-index:2}
-.rule{height:1px;background:var(--rule);border:none}
+/* ---------- sections ---------- */
+.sec{padding:96px 0}
+.sec.soft{background:var(--bg-soft)}
+.sec-head{max-width:720px;margin-bottom:44px}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+html[lang="ar"] .eyebrow{letter-spacing:0}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.025em;font-weight:800}
+html[lang="ar"] .sec-head h2{letter-spacing:0;line-height:1.3}
+.sec-head p{margin-top:14px;color:var(--ink-2);font-size:1.05rem}
 
-/* ══════════════════ hero ══════════════════ */
-.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 60px) 0 70px;position:relative}
-.hero-grid{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:end;width:100%}
-.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--accent);display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.kicker::before{content:"";width:44px;height:1px;background:var(--accent)}
-h1.name{font-family:var(--serif);font-weight:400;font-size:clamp(3.4rem,12vw,9.6rem);
-  line-height:.86;letter-spacing:-.025em;color:var(--ink)}
-h1.name em{font-style:italic;color:var(--accent)}
-.title-line{margin-top:30px;padding-top:24px;border-top:1px solid var(--rule);
-  display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;
-  font-family:var(--mono);font-size:.84rem;color:var(--ink-2)}
-.title-line .dot{width:4px;height:4px;border-radius:50%;background:var(--teal);display:inline-block}
-.hero-copy{margin-top:26px;max-width:56ch;font-size:clamp(1rem,1.5vw,1.14rem);color:var(--ink-2)}
-.hero-copy strong{color:var(--ink);font-weight:600}
-.hero-copy .hl{background:linear-gradient(180deg,transparent 62%,var(--accent-soft) 62%);
-  color:var(--ink);font-weight:500;padding:0 2px}
-.index{margin-top:40px;border-top:1px solid var(--rule);max-width:560px}
-.index-lab{font-family:var(--mono);font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink-3);margin:14px 0 4px}
-.index a{display:flex;align-items:baseline;gap:16px;padding:11px 0;text-decoration:none;
-  border-bottom:1px solid var(--rule);color:var(--ink);transition:.28s;position:relative}
-.index a:last-child{border-bottom:none}
-.index a:hover{color:var(--accent);padding-left:10px}
-.index a .n{font-family:var(--mono);font-size:.68rem;color:var(--accent);min-width:22px}
-.index a .t{font-family:var(--serif);font-size:1.28rem}
-.index a .arw{margin-left:auto;font-family:var(--mono);font-size:.85rem;color:var(--ink-3);transition:transform .28s}
-.index a:hover .arw{transform:translateX(4px);color:var(--accent)}
-.hero-side{display:flex;flex-direction:column;gap:15px;padding-left:44px;
-  border-left:1px solid var(--rule);min-width:228px}
-.side-item{display:flex;flex-direction:column;gap:3px}
-.side-item .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
-.side-item a,.side-item span.val{color:var(--ink);text-decoration:none;font-size:.89rem;
-  transition:color .2s;border-bottom:1px solid transparent;width:fit-content}
-.side-item a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);
-  margin-right:7px;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(79,179,165,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(79,179,165,0)}}
+/* ---------- featured project ---------- */
+.project{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.project-top{padding:36px 40px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.project-top h3{font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.02em;font-weight:800;line-height:1.15}
+html[lang="ar"] .project-top h3{letter-spacing:0}
+.project-top p{margin-top:10px;color:var(--ink-2);max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.project-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
 
-/* ══════════════════ stat band ══════════════════ */
-.band{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.band-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--max);margin:0 auto}
-.stat{padding:54px 30px;border-right:1px solid var(--rule);transition:background .35s}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface)}
-.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,5.6vw,3.8rem);
-  line-height:1;letter-spacing:-.02em;color:var(--ink)}
-.stat span{display:block;margin-top:13px;font-family:var(--mono);font-size:.67rem;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.viewer{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 40px 30px}
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.tab{height:38px;padding:0 16px;border-radius:9px;border:1px solid var(--line);background:#fff;font:600 .86rem var(--font);
+  color:var(--ink-2);cursor:pointer;transition:.2s}
+html[lang="ar"] .tab{font-family:var(--font-ar)}
+.tab:hover{color:var(--ink);border-color:var(--line-2)}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.shot{display:none;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow-lg);background:#fff;
+  position:relative;text-decoration:none}
+.shot.on{display:block}
+.shot img{width:100%;height:auto}
+.shot .zoom{position:absolute;bottom:12px;inset-inline-end:12px;background:rgba(15,23,42,.78);color:#fff;font-size:.78rem;
+  font-weight:600;padding:6px 10px;border-radius:8px;opacity:0;transition:.2s}
+.shot:hover .zoom{opacity:1}
+.shot-cap{margin-top:12px;font-size:.88rem;color:var(--ink-2)}
 
-/* ══════════════════ section head ══════════════════ */
-.sec{padding:120px 0}
-.sec-head{display:flex;align-items:flex-end;gap:24px;margin-bottom:16px;flex-wrap:wrap}
-.sec-num{font-family:var(--mono);font-size:.71rem;color:var(--accent);letter-spacing:.2em;padding-bottom:12px}
-.sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,6.2vw,4rem);
-  letter-spacing:-.02em;line-height:1}
-.sec-title em{font-style:italic;color:var(--accent)}
-.sec-sub{font-size:.93rem;color:var(--ink-3);max-width:40ch;margin-left:auto;padding-bottom:10px}
-.sec-rule{margin-bottom:56px}
+.project-body{padding:40px}
+.block+.block{margin-top:44px;padding-top:40px;border-top:1px solid var(--line)}
+.block h4{font-size:1.15rem;font-weight:700;margin-bottom:18px;letter-spacing:-.01em}
+.qs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:q}
+.q{background:var(--bg-soft);border-radius:12px;padding:16px;font-size:.9rem;color:var(--ink-2);counter-increment:q;line-height:1.5}
+.q::before{content:counter(q);display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#fff;
+  border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:.8rem;margin-bottom:10px}
+.findings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.finding{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.finding b{display:block;font-size:2rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--accent);margin-bottom:10px}
+.finding strong{display:block;font-size:.98rem;margin-bottom:6px}
+.finding p{font-size:.88rem;color:var(--ink-2);line-height:1.55}
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rec{display:flex;gap:12px;padding:18px;border-radius:14px;background:var(--good-soft)}
+.rec svg{width:22px;height:22px;stroke:var(--good);fill:none;stroke-width:2.2;flex-shrink:0;margin-top:2px}
+.rec p{font-size:.92rem;color:#064E3B;line-height:1.55}
+.built{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bcard{min-width:0}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:20px}
+.bcard h5{font-size:.95rem;font-weight:700;margin-bottom:10px}
+.bcard ul{list-style:none;display:grid;gap:8px}
+.bcard li{font-size:.86rem;color:var(--ink-2);line-height:1.5;padding-inline-start:14px;position:relative}
+.bcard li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.55}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82em;background:var(--bg-soft);border:1px solid var(--line);
+  padding:1px 6px;border-radius:6px;color:var(--ink)}
+.dax{margin-top:14px;background:#0F172A;color:#E2E8F0;border-radius:10px;padding:14px 16px;font:500 .8rem/1.6 ui-monospace,Consolas,monospace;
+  overflow-wrap:anywhere;direction:ltr;text-align:left}
+.dax .k{color:#A5B4FC}.dax .f{color:#FBBF24}
+.project-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:22px 40px;
+  border-top:1px solid var(--line);background:var(--bg-soft);font-size:.88rem;color:var(--ink-2)}
+.project-foot a{color:var(--ink);font-weight:600}
 
-/* ══════════════════ case ══════════════════ */
-.case{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:5px;
-  padding:44px 46px;margin-bottom:20px;overflow:hidden;
-  transition:border-color .4s,transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s}
-.case::before{content:"";position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s;
-  background:radial-gradient(620px circle at var(--mx,50%) var(--my,0%),rgba(224,121,63,.09),transparent 42%)}
-.case::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);
-  transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
-.case:hover{border-color:var(--rule-2);transform:translateY(-4px);box-shadow:0 24px 56px -34px var(--shadow)}
-.case:hover::before{opacity:1}
-.case:hover::after{transform:scaleY(1)}
-.case-idx{position:absolute;top:28px;right:38px;font-family:var(--serif);
-  font-size:clamp(3.2rem,8.5vw,5.4rem);line-height:1;color:var(--surface-2);pointer-events:none;user-select:none}
-.case-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-bottom:4px;
-  position:relative;z-index:1;padding-right:86px}
-.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,3.4vw,2.25rem);line-height:1.1}
-.tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--accent);border:1px solid var(--accent);background:var(--accent-soft);
-  padding:5px 11px;border-radius:100px;white-space:nowrap}
-.lede{color:var(--ink-2);max-width:66ch;margin:15px 0 34px;position:relative;z-index:1;font-size:1.01rem}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 52px;position:relative;z-index:1}
-.blk h4{font-family:var(--mono);font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:14px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
-.blk p{color:var(--ink-2);font-size:.93rem}
-.blk ul{list-style:none;display:grid;gap:10px}
-.blk li{position:relative;padding-left:20px;color:var(--ink-2);font-size:.93rem;line-height:1.6}
-.blk li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--accent)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:var(--mono);font-size:.71rem;color:var(--ink-2);background:var(--bg);
-  border:1px solid var(--rule);padding:5px 12px;border-radius:4px;white-space:nowrap;transition:.25s}
-.case:hover .chip{border-color:var(--rule-2);color:var(--ink)}
-.figs{display:flex;flex-wrap:wrap;gap:14px 38px}
-.fig b{display:block;font-family:var(--serif);font-size:2rem;line-height:1.1;color:var(--accent)}
-.shot{display:block;position:relative;z-index:1;margin:0 0 34px;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--bg)}
-.shot img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
-.shot:hover img{transform:scale(1.015)}
-.proj-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding-top:24px;border-top:1px solid var(--rule);position:relative;z-index:1}
-.proj-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;border:1px solid var(--rule-2);
-  color:var(--ink);text-decoration:none;font-family:var(--mono);font-size:.74rem;transition:.25s;white-space:nowrap}
-.proj-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--surface-2)}
-.proj-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.proj-btn.primary:hover{background:var(--accent-2);color:#fff}
-.fig span{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.locked{margin-top:34px;padding-top:19px;border-top:1px solid var(--rule);
-  display:flex;align-items:center;gap:11px;position:relative;z-index:1;
-  font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
-.locked svg{width:13px;height:13px;stroke:var(--accent);fill:none;stroke-width:1.8;flex-shrink:0}
+/* ---------- experience ---------- */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:40px}
+.role-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.role-card .when{font-size:.8rem;font-weight:600;color:var(--accent)}
+.role-card h4{font-size:1rem;margin:6px 0 2px}
+.role-card .org{font-size:.86rem;color:var(--ink-2)}
+.role-card p{font-size:.86rem;color:var(--ink-2);margin-top:10px;line-height:1.55}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cases .case:last-child:nth-child(odd){grid-column:1/-1}
+.case{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:.25s}
+.case:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.case-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.case h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.case .org{font-size:.82rem;color:var(--ink-3);font-weight:500;margin-top:4px}
+.case .num{font-weight:800;color:var(--line-2);font-size:1.6rem;line-height:1}
+.case p.sum{margin-top:14px;color:var(--ink-2);font-size:.94rem}
+.figs{display:flex;flex-wrap:wrap;gap:22px;margin-top:18px}
+.fig b{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.fig span{font-size:.8rem;color:var(--ink-2)}
+details{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+summary{cursor:pointer;font-weight:600;font-size:.88rem;color:var(--accent);list-style:none;display:flex;align-items:center;gap:6px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:700}
+details[open] summary::after{content:"–"}
+details .in{margin-top:12px}
+details h5{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:12px 0 6px}
+html[lang="ar"] details h5{letter-spacing:0}
+details p,details li{font-size:.88rem;color:var(--ink-2);line-height:1.55}
+details ul{padding-inline-start:18px;display:grid;gap:4px}
+.case .stack-row{margin-top:auto;padding-top:18px}
+.lock{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:.8rem;color:var(--ink-3)}
+.lock svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
 
-/* ══════════════════ marquee ══════════════════ */
-.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);padding:8px 0}
-.track{display:flex;gap:13px;width:max-content;animation:slide 46s linear infinite}
-.track.rev{animation-direction:reverse;animation-duration:56s}
-.marquee:hover .track{animation-play-state:paused}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mchip{font-family:var(--mono);font-size:.84rem;color:var(--ink-2);white-space:nowrap;
-  border:1px solid var(--rule);background:var(--surface);padding:11px 22px;border-radius:100px;transition:.25s}
-.mchip:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
-.skill-note{margin-top:46px;display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:26px}
-.snote{border-top:2px solid var(--ink);padding-top:15px}
-.snote b{display:block;font-family:var(--serif);font-weight:400;font-size:1.28rem;margin-bottom:6px}
-.snote span{font-size:.86rem;color:var(--ink-3)}
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.skill.feature{grid-column:span 2;background:linear-gradient(135deg,#fff 0%,var(--accent-soft) 100%);border-color:#DCDFFF}
+html[dir="rtl"] .skill.feature{background:linear-gradient(225deg,#fff 0%,var(--accent-soft) 100%)}
+.skill-ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--bg-soft);margin-bottom:16px;
+  font-weight:800;font-size:.85rem;color:var(--ink)}
+.skill.feature .skill-ic{background:var(--accent);color:#fff}
+.skill h4{font-size:1.08rem;font-weight:700}
+.skill p{font-size:.9rem;color:var(--ink-2);margin-top:8px;line-height:1.55}
+.skill .stack-row{margin-top:16px}
+.skill .proof{margin-top:14px;font-size:.84rem;font-weight:600;color:var(--accent);text-decoration:none;display:inline-block}
+.skill .proof:hover{text-decoration:underline}
 
-/* ══════════════════ education ══════════════════ */
-.edu-card{background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:42px 46px;
-  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px}
-.edu-card h3{font-family:var(--serif);font-weight:400;font-size:1.65rem}
-.edu-card p{color:var(--ink-2);margin-top:7px;font-size:.94rem}
-.edu-year{font-family:var(--serif);font-size:3.2rem;color:var(--surface-2)}
+/* ---------- education ---------- */
+.edu{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border:1px solid var(--line);
+  border-radius:18px;padding:28px 32px;flex-wrap:wrap}
+.edu h3{font-size:1.2rem;font-weight:700}
+.edu p{color:var(--ink-2);margin-top:4px}
+.edu .yr{font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-.03em}
+.langs{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 
-/* ══════════════════ cta ══════════════════ */
-.cta{padding:130px 0 110px;text-align:center}
-.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,8vw,5.4rem);
-  letter-spacing:-.025em;line-height:1;color:var(--ink)}
-.cta h2 em{font-style:italic;color:var(--accent)}
-.cta p{margin-top:24px;color:var(--ink-2);max-width:46ch;margin-inline:auto}
-.cta-actions{margin-top:42px;display:flex;flex-wrap:wrap;gap:13px;justify-content:center}
-.btn{display:inline-flex;align-items:center;gap:11px;padding:16px 32px;border-radius:100px;
-  font-family:var(--mono);font-size:.84rem;text-decoration:none;transition:.3s cubic-bezier(.4,0,.2,1)}
-.btn-primary{background:var(--ink);color:var(--bg);font-weight:500}
-.btn-primary:hover{background:var(--accent);color:#fff;transform:translateY(-3px);box-shadow:0 16px 34px -16px var(--accent)}
-.btn-ghost{border:1px solid var(--rule-2);color:var(--ink-2);background:var(--surface)}
-.btn-ghost:hover{color:var(--ink);border-color:var(--ink);transform:translateY(-3px)}
-footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-2)}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
-  font-family:var(--mono);font-size:.73rem;color:var(--ink-3)}
+/* ---------- contact ---------- */
+.cta{background:var(--ink);color:#fff;border-radius:28px;padding:64px 48px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:120%;background:radial-gradient(ellipse at center,rgba(79,70,229,.45),transparent 60%);pointer-events:none}
+.cta>*{position:relative}
+.cta h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+html[lang="ar"] .cta h2{letter-spacing:0;line-height:1.35}
+.cta p{color:#CBD5E1;margin:14px auto 0;max-width:52ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.cta .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.cta .btn-line:hover{border-color:#fff}
+.cta .btn-white{background:#fff;color:var(--ink)}
+.cta .btn-white:hover{background:#E2E8F0}
+footer{padding:32px 0 40px;color:var(--ink-3);font-size:.85rem}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-.totop{position:fixed;right:26px;bottom:26px;z-index:85;width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);cursor:pointer;
-  display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);
-  transition:.32s;box-shadow:0 8px 24px -14px var(--shadow)}
-.totop.show{opacity:1;visibility:visible;transform:none}
-.totop:hover{color:var(--accent);border-color:var(--accent)}
-.totop svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.stat b,.fig b,.finding b,.edu .yr{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .stat b,html[dir="rtl"] .fig b,html[dir="rtl"] .finding b{text-align:right}
 
-.rv{opacity:0;transform:translateY(28px);
-  transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
 .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-/* ══════════════════ responsive ══════════════════ */
-@media (max-width:1280px){ .dots{display:none} }
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:36px;align-items:start}
-  .hero-side{padding-left:0;border-left:none;border-top:1px solid var(--rule);padding-top:26px;
-    flex-direction:row;flex-wrap:wrap;gap:24px 40px}
-  .nav-links{display:none}
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .qs{grid-template-columns:1fr 1fr}
+  .findings,.recs{grid-template-columns:1fr 1fr}
+  .built{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skills{grid-template-columns:1fr 1fr}
+  .skill.feature{grid-column:span 2}
+  .timeline{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .nav-links,.nav-right .cv-btn{display:none}
   .burger{display:grid}
-}
-@media (max-width:900px){
-  .band-grid{grid-template-columns:1fr 1fr}
-  .stat{border-bottom:1px solid var(--rule)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
-  .grid{grid-template-columns:1fr;gap:26px}
-  .sec-sub{margin-left:0}
+  .nav-right{margin-inline-start:auto}
+  .project-top{grid-template-columns:1fr}
+  .project-actions{justify-content:flex-start}
+  .cases{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-  .wrap,.nav-in{padding:0 22px}
-  .sec{padding:82px 0}
-  .case{padding:30px 22px}
-  .case-top{padding-right:0}
-  .case-idx{font-size:3rem;top:18px;right:20px}
-  .edu-card{padding:30px 22px}
-  .nav-cta{display:none}
-  .nav-cv span{display:none}
-  .nav-cv{padding:8px 12px}
-  .brand .bn{display:none}
-  .sheet a{font-size:1.8rem}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition-duration:.01ms!important}
-  .rv{opacity:1;transform:none}
-  html{scroll-behavior:auto}
-}
-
-/* ══════════════════ RTL / ARABIC — keep last ══════════════════ */
-[dir="rtl"]{
-  --serif:"Amiri",Georgia,serif;
-  --body:"IBM Plex Sans Arabic",-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Sans Arabic",ui-monospace,sans-serif;
-}
-[dir="rtl"] *{letter-spacing:normal}
-[dir="rtl"] h1.name{line-height:1.05;font-weight:700}
-[dir="rtl"] h1.name em,[dir="rtl"] .sec-title em,[dir="rtl"] .cta h2 em{font-style:normal;font-weight:700}
-[dir="rtl"] .sec-title,[dir="rtl"] .cta h2{line-height:1.25}
-[dir="rtl"] .case h3,[dir="rtl"] .edu-card h3,[dir="rtl"] .snote b{line-height:1.4}
-[dir="rtl"] .hero-side{padding-left:0;padding-right:44px;border-left:none;border-right:1px solid var(--rule)}
-[dir="rtl"] .index a:hover{padding-left:0;padding-right:10px}
-[dir="rtl"] .index a .arw{margin-left:0;margin-right:auto;transform:scaleX(-1)}
-[dir="rtl"] .index a:hover .arw{transform:scaleX(-1) translateX(4px)}
-[dir="rtl"] .blk li{padding-left:0;padding-right:20px}
-[dir="rtl"] .blk li::before{left:auto;right:0}
-[dir="rtl"] .case::after{left:auto;right:0}
-[dir="rtl"] .case-idx{right:auto;left:38px}
-[dir="rtl"] .case-top{padding-right:0;padding-left:86px}
-[dir="rtl"] .stat{border-right:none;border-left:1px solid var(--rule)}
-[dir="rtl"] .stat:last-child{border-left:none}
-[dir="rtl"] .sec-sub{margin-left:0;margin-right:auto}
-[dir="rtl"] .dots{right:auto;left:26px;align-items:flex-start;flex-direction:column}
-[dir="rtl"] .dot-link{flex-direction:row-reverse}
-[dir="rtl"] .totop{right:auto;left:26px}
-[dir="rtl"] .sheet-close{right:auto;left:32px}
-[dir="rtl"] .status-dot{margin-right:0;margin-left:7px}
-[dir="rtl"] .nav-links a.active::after{left:15px;right:15px}
-@media (max-width:980px){
-  [dir="rtl"] .hero-side{padding-right:0;border-right:none;border-top:1px solid var(--rule)}
-}
-@media (max-width:640px){
-  [dir="rtl"] .case-top{padding-left:0}
-  [dir="rtl"] .case-idx{left:20px}
+  .wrap,.nav-in{padding:0 18px}
+  .hero{padding:56px 0 48px}
+  .sec{padding:68px 0}
+  .project-top,.project-body{padding:26px 20px}
+  .viewer{padding:18px 20px 24px}
+  .project-foot{padding:18px 20px}
+  .qs,.findings,.recs,.built,.skills{grid-template-columns:1fr}
+  .skill.feature{grid-column:auto}
+  .cta{padding:48px 22px;border-radius:22px}
+  .stats{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<div class="progress" id="prog"></div>
-<div class="wash"><div class="blot blot-1"></div><div class="blot blot-2"></div></div>
-<div class="tex"></div>
-
 <!-- ═══════════ NAV ═══════════ -->
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><span class="mark">M</span><span class="bn" data-ar="محمد الحربي">Mohammed Alharbi</span></a>
+    <a class="brand" href="#top"><span class="mark">M</span><span data-ar="محمد الحربي">Mohammed Alharbi</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#work" data-ar="01 · الأعمال">01 · Work</a></li>
-      <li><a href="#skills" data-ar="02 · الأدوات">02 · Toolkit</a></li>
-      <li><a href="#education" data-ar="03 · التعليم">03 · Education</a></li>
-      <li><a href="#contact" data-ar="04 · تواصل">04 · Contact</a></li>
+      <li><a href="#project" data-ar="المشروع">Project</a></li>
+      <li><a href="#experience" data-ar="الخبرة">Experience</a></li>
+      <li><a href="#skills" data-ar="المهارات">Skills</a></li>
+      <li><a href="#education" data-ar="التعليم">Education</a></li>
+      <li><a href="#contact" data-ar="تواصل">Contact</a></li>
     </ul>
     <div class="nav-right">
       <button class="icon-btn" id="langBtn" aria-label="Switch language">ع</button>
+      <a class="btn btn-dark btn-sm cv-btn" href="Mohammed_Alharbi_Data_Analyst_CV.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span data-ar="السيرة الذاتية">Download CV</span>
+      </a>
       <button class="icon-btn burger" id="burger" aria-label="Open menu">
         <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
-      <a class="nav-cv" href="Mohammed_Alharbi_Data_Analyst_CV.pdf" target="_blank" rel="noopener" data-ar="السيرة الذاتية">
-        <svg viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span data-ar="السيرة">CV</span>
-      </a>
-      <a class="nav-cta" href="#contact" data-ar="تواصل معي">Get in touch</a>
     </div>
   </div>
 </nav>
@@ -386,350 +324,267 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
   <button class="icon-btn sheet-close" id="sheetClose" aria-label="Close menu">
     <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
   </button>
-  <a href="#work"><span>01</span><i data-ar="الأعمال" style="font-style:normal">Work</i></a>
-  <a href="#skills"><span>02</span><i data-ar="الأدوات" style="font-style:normal">Toolkit</i></a>
-  <a href="#education"><span>03</span><i data-ar="التعليم" style="font-style:normal">Education</i></a>
-  <a href="#contact"><span>04</span><i data-ar="تواصل" style="font-style:normal">Contact</i></a>
-</div>
-
-<div class="dots" id="dots">
-  <a class="dot-link" href="#work"><span class="lbl" data-ar="الأعمال">Work</span><span class="pt"></span></a>
-  <a class="dot-link" href="#skills"><span class="lbl" data-ar="الأدوات">Toolkit</span><span class="pt"></span></a>
-  <a class="dot-link" href="#education"><span class="lbl" data-ar="التعليم">Education</span><span class="pt"></span></a>
-  <a class="dot-link" href="#contact"><span class="lbl" data-ar="تواصل">Contact</span><span class="pt"></span></a>
+  <a href="#project" data-ar="المشروع">Project</a>
+  <a href="#experience" data-ar="الخبرة">Experience</a>
+  <a href="#skills" data-ar="المهارات">Skills</a>
+  <a href="#education" data-ar="التعليم">Education</a>
+  <a href="#contact" data-ar="تواصل">Contact</a>
+  <a href="Mohammed_Alharbi_Data_Analyst_CV.pdf" target="_blank" rel="noopener" data-ar="السيرة الذاتية ↓">Download CV ↓</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker rv" data-ar="محلل بيانات · مكة المكرمة، السعودية">Data Analyst · Makkah, Saudi Arabia</div>
-      <h1 class="name rv" data-ar="محمد<br><em>الحربي</em>">Mohammed<br><em>Alharbi</em></h1>
-
-      <div class="title-line rv" data-ar='<span>Python</span><i class="dot"></i><span>SQL</span><i class="dot"></i><span>Excel</span><i class="dot"></i><span>جودة البيانات وبناء الأدوات الداخلية</span>'>
-        <span>Python</span><i class="dot"></i>
-        <span>SQL</span><i class="dot"></i>
-        <span>Excel</span><i class="dot"></i>
-        <span>Data Quality &amp; Internal Tooling</span>
-      </div>
-
-      <p class="hero-copy rv" data-ar='خريج علوم بيانات من جامعة أم القرى، بخبرة عملية في <strong>موسمين حج</strong> ضمن برامج تشغيلية على مستوى وطني. أشتغل عند النقطة التي تلتقي فيها البيانات التشغيلية المبعثرة بقرارات لازم تُتخذ في نفس اليوم — وحين تعجز العملية اليدوية عن المواكبة، <span class="hl">أبني الأداة التي تحلّ محلها.</span>'>
-        Data Science graduate from Umm Al-Qura University with <strong>two Hajj seasons</strong>
-        on national-scale operational programs. I work where messy operational data meets
-        decisions that have to be made the same day — and when the manual process can't keep up,
-        <span class="hl">I build the tool that replaces it.</span>
+      <span class="pill rv"><i></i><span data-ar="متاح للفرص · مكة المكرمة">Open to opportunities · Makkah, Saudi Arabia</span></span>
+      <h1 class="rv" data-ar="محمد <span>الحربي</span>">Mohammed <span>Alharbi</span></h1>
+      <div class="role rv" data-ar="محلل بيانات">Data Analyst</div>
+      <p class="lead rv" data-ar="خريج علوم بيانات من جامعة أم القرى، بخبرة عملية في <strong>موسمين حج</strong> ضمن برامج تشغيلية على مستوى وطني. أحوّل البيانات التشغيلية المبعثرة إلى <strong>داشبوردات Power BI</strong> وتقارير تساعد على اتخاذ القرار، ولما تعجز العملية اليدوية عن المواكبة، أبني الأداة اللي تحل محلها.">
+        Data Science graduate from Umm Al-Qura University with <strong>two Hajj seasons</strong> on national-scale
+        operational programs. I turn messy operational data into <strong>Power BI dashboards</strong> and reports that drive
+        decisions — and when the manual process can't keep up, I build the tool that replaces it.
       </p>
-
-      <nav class="index rv">
-        <p class="index-lab" data-ar="المحتويات">Contents</p>
-        <a href="#work"><span class="n">01</span><span class="t" data-ar="الأعمال المختارة">Selected Work</span><span class="arw">→</span></a>
-        <a href="#skills"><span class="n">02</span><span class="t" data-ar="الأدوات">Toolkit</span><span class="arw">→</span></a>
-        <a href="#education"><span class="n">03</span><span class="t" data-ar="التعليم">Education</span><span class="arw">→</span></a>
-        <a href="#contact"><span class="n">04</span><span class="t" data-ar="تواصل">Contact</span><span class="arw">→</span></a>
-      </nav>
+      <div class="hero-actions rv">
+        <a class="btn btn-accent" href="#project" data-ar="شاهد مشروع Power BI ↓">See the Power BI project ↓</a>
+        <a class="btn btn-line" href="#contact" data-ar="تواصل معي">Get in touch</a>
+      </div>
+      <div class="stack-row rv">
+        <span class="chip hl">Power BI</span><span class="chip hl">Power Query</span><span class="chip hl">DAX</span>
+        <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Excel</span>
+      </div>
     </div>
 
-    <aside class="hero-side rv">
-      <div class="side-item">
-        <span class="lab" data-ar="البريد">Email</span>
-        <a href="mailto:ds.mohammedd@gmail.com">ds.mohammedd@gmail.com</a>
+    <aside class="hero-card rv">
+      <h3 data-ar="بالأرقام">At a glance</h3>
+      <div class="stats">
+        <div class="stat"><b>2</b><span data-ar="موسم حج">Hajj seasons</span></div>
+        <div class="stat"><b>180+</b><span data-ar="شركة خدمة">service companies</span></div>
+        <div class="stat"><b>400+</b><span data-ar="رحلة معالَجة">flights processed</span></div>
+        <div class="stat"><b>96K</b><span data-ar="طلب محلَّل في Power BI">orders analysed in Power BI</span></div>
       </div>
-      <div class="side-item">
-        <span class="lab" data-ar="الجوال">Phone</span>
-        <a href="tel:+966590082847" dir="ltr">+966 590 082 847</a>
-      </div>
-      <div class="side-item">
-        <span class="lab" data-ar="لينكدإن">LinkedIn</span>
-        <a href="https://linkedin.com/in/mohammed-alharbi-data" target="_blank" rel="noopener" dir="ltr">mohammed-alharbi-data</a>
-      </div>
-      <div class="side-item">
-        <span class="lab" data-ar="الحالة">Status</span>
-        <span class="val" data-ar='<i class="status-dot"></i>متاح للفرص'><i class="status-dot"></i>Open to opportunities</span>
+      <div class="contact-mini">
+        <a href="mailto:ds.mohammedd@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>ds.mohammedd@gmail.com</a>
+        <a href="tel:+966590082847" dir="ltr"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+966 590 082 847</a>
+        <a href="https://linkedin.com/in/mohammed-alharbi-data" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>linkedin.com/in/mohammed-alharbi-data</a>
       </div>
     </aside>
   </div>
 </header>
 
-<!-- ═══════════ STAT BAND ═══════════ -->
-<section class="band">
-  <div class="band-grid">
-    <div class="stat rv"><b data-count="2">0</b><span data-ar="موسم حج">Hajj seasons</span></div>
-    <div class="stat rv"><b data-count="180" data-suffix="+">0</b><span data-ar="شركة خدمة">Service companies</span></div>
-    <div class="stat rv"><b data-count="400" data-suffix="+">0</b><span data-ar="رحلة معالَجة">Flights processed</span></div>
-    <div class="stat rv"><b data-count="100" data-suffix="+">0</b><span data-ar="مراقب ميداني">Field monitors served</span></div>
+<!-- ═══════════ FEATURED PROJECT ═══════════ -->
+<section class="sec soft" id="project">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-ar="مشروع مميز">Featured project</span>
+      <h2 data-ar="لماذا تتأخر الطلبات، وكم يكلّف ذلك؟">Why do orders arrive late — and what does it cost?</h2>
+      <p data-ar="داشبورد Power BI كامل، من البيانات الخام إلى التوصيات. كل شيء معروض هنا، وتقدر تحمّل ملف التقرير نفسه.">A complete Power BI dashboard, from raw data to recommendations. Everything is shown right here — and you can download the report file itself.</p>
+    </div>
+
+    <article class="project rv">
+      <div class="project-top">
+        <div>
+          <div class="tags"><span class="chip hl">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip" data-ar="نمذجة البيانات">Data modeling</span></div>
+          <h3 data-ar="أداء التوصيل في Olist">Olist Delivery Performance</h3>
+          <p data-ar="تحليل تشغيلي لحوالي 96 ألف طلب وصلت لعملاء Olist، وهو متجر إلكتروني برازيلي، لمعرفة كم مرة تتأخر الطلبات، وليش، وكم يكلّف هذا من رضا العميل.">An operations analysis of ~96,000 delivered orders from Olist, a Brazilian e-commerce marketplace — how often orders arrive late, why, and what it costs in customer satisfaction.</p>
+        </div>
+        <div class="project-actions">
+          <a class="btn btn-dark btn-sm" href="olist_operations.pbix" download>
+            <svg viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span data-ar="ملف Power BI">Power BI file</span></a>
+          <a class="btn btn-line btn-sm" href="olist_operations.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg><span data-ar="نسخة PDF">PDF version</span></a>
+        </div>
+      </div>
+
+      <div class="viewer">
+        <div class="tabs" role="tablist">
+          <button class="tab on" data-shot="0" data-ar="نظرة عامة">Overview</button>
+          <button class="tab" data-shot="1" data-ar="أين ومتى">Where &amp; When</button>
+          <button class="tab" data-shot="2" data-ar="البائعون">Sellers</button>
+        </div>
+        <a class="shot on" href="images/olist-overview.jpg" target="_blank" rel="noopener">
+          <img src="images/olist-overview.jpg" alt="Overview page: KPIs, rating by delivery status, seller vs shipping time" loading="lazy">
+          <span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+        <a class="shot" href="images/olist-where-when.jpg" target="_blank" rel="noopener">
+          <img src="images/olist-where-when.jpg" alt="Where &amp; When page: late rate by state, cross-state orders, monthly trend" loading="lazy">
+          <span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+        <a class="shot" href="images/olist-sellers.jpg" target="_blank" rel="noopener">
+          <img src="images/olist-sellers.jpg" alt="Sellers page: seller scorecard and late rate by seller prep time" loading="lazy">
+          <span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+        <p class="shot-cap" id="shotCap" data-ar="المؤشرات الرئيسية، وأثر التأخير على التقييم، وأين يضيع الوقت: عند البائع أو في الشحن.">Headline KPIs, how lateness affects ratings, and where the time goes — with the seller or in shipping.</p>
+      </div>
+
+      <div class="project-body">
+        <div class="block">
+          <h4 data-ar="أسئلة البزنس">Business questions</h4>
+          <div class="qs">
+            <div class="q" data-ar="كم طلب يوصل بعد التاريخ اللي انوعد فيه العميل؟">How many orders arrive after the date promised to the customer?</div>
+            <div class="q" data-ar="هل التأخير ينزّل تقييم العميل؟">Does a late delivery hurt the customer's rating?</div>
+            <div class="q" data-ar="وين يصير التأخير: عند البائع ولا في الشحن؟">Where does the delay happen — with the seller, or in shipping?</div>
+            <div class="q" data-ar="أي الولايات وأي الشهور فيها أكثر تأخير؟">Which states and which months are hit hardest?</div>
+            <div class="q" data-ar="أي البائعين يأخرون الطلبات؟">Which sellers slow orders down?</div>
+          </div>
+        </div>
+
+        <div class="block">
+          <h4 data-ar="أهم النتائج">Key findings</h4>
+          <div class="findings">
+            <div class="finding"><b>8.1%</b><strong data-ar="من الطلبات توصل متأخرة">of orders arrive late</strong>
+              <p data-ar="تقريباً 8 آلاف طلب من 96 ألف وصلت بعد التاريخ المتوقع.">About 8K of 96K delivered orders arrived after the estimated date.</p></div>
+            <div class="finding"><b>−1.7★</b><strong data-ar="فرق التقييم">Rating gap</strong>
+              <p data-ar="الطلبات المتأخرة تقييمها 2.6 من 5، مقابل 4.3 للي وصلت في وقتها.">Late orders are rated 2.6 / 5, compared with 4.3 for on-time orders.</p></div>
+            <div class="finding"><b>25 vs 7</b><strong data-ar="أيام في الشحن">Days in shipping</strong>
+              <p data-ar="الشحن هو السبب الرئيسي. وقت البائع يزيد بس من 2.1 إلى 4.8 يوم.">Shipping drives most of the delay; time with the seller only rises from 2.1 to 4.8 days.</p></div>
+            <div class="finding"><b>+50%</b><strong data-ar="الطلبات بين الولايات">Cross-state orders</strong>
+              <p data-ar="تتأخر 9.3% مقابل 6.1% داخل نفس الولاية. والشمال الشرقي الأكثر تأثراً (CE ‏15.4%).">Late 9.3% of the time vs 6.1% within the same state. The Northeast is hit hardest (CE 15.4%).</p></div>
+            <div class="finding"><b>~14%</b><strong data-ar="في مواسم الذروة">In peak seasons</strong>
+              <p data-ar="التأخير يقفز وقت Black Friday في نوفمبر 2017، ويتجاوز 20% في مارس 2018.">Late rate jumps around Black Friday (Nov 2017) and passes 20% in March 2018.</p></div>
+            <div class="finding"><b>38%</b><strong data-ar="عند البائعين البطيئين">With slow sellers</strong>
+              <p data-ar="الطلب اللي يمسكه البائع 11 يوم أو أكثر يتأخر 38% من المرات، مقابل أقل من 6% للي ينشحن خلال يوم.">Orders held 11+ days by the seller are late 38% of the time, vs under 6% when shipped within a day.</p></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <h4 data-ar="التوصيات">Recommendations</h4>
+          <div class="recs">
+            <div class="rec"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p data-ar="زيادة طاقة شركات الشحن قبل مواسم الذروة، خصوصاً نوفمبر.">Add carrier capacity before peak seasons, especially November.</p></div>
+            <div class="rec"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p data-ar="مراجعة شركات الشحن للشمال الشرقي وRJ، والتفكير في مستودعات أقرب للعملاء.">Review carriers serving the Northeast and RJ, and consider fulfilment closer to those customers.</p></div>
+            <div class="rec"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p data-ar="تحديد حد أقصى لوقت تجهيز البائع، ومتابعة اللي يتجاوزونه باستمرار.">Set a maximum prep time for sellers and follow up with those who regularly exceed it.</p></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <h4 data-ar="طريقة البناء">How it was built</h4>
+          <div class="built">
+            <div class="bcard"><h5 data-ar="تجهيز البيانات · Power Query">Data prep · Power Query</h5>
+              <ul data-ar="<li>5 جداول، والطلبات اللي وصلت بس</li><li>أعمدة Prep Days وShipping Days وIs Late</li><li>حوالي 1,350 طلب بتواريخ مستحيلة: فرّغت القيمة الغلط بدل حذف الطلب</li><li>أسماء مقروءة للبائعين بدل الأكواد المشفرة</li>">
+                <li>5 tables, delivered orders only</li>
+                <li><code>Prep Days</code>, <code>Shipping Days</code> and <code>Is Late</code> columns</li>
+                <li>~1,350 orders with impossible timestamps: blanked the broken value instead of deleting the order</li>
+                <li>Readable seller labels instead of hashed IDs</li></ul></div>
+            <div class="bcard"><h5 data-ar="الموديل">Data model</h5>
+              <ul data-ar="<li>Star schema، وجدول الطلبات هو الـ Fact</li><li>فلترة باتجاه واحد افتراضياً</li><li>اتجاهين بين orders وorder_items عشان فلتر البائع يوصل للطلبات</li>">
+                <li>Star schema with <code>orders</code> as the fact table</li>
+                <li>Single-direction filters by default</li>
+                <li>Two-way filter between <code>orders</code> and <code>order_items</code> so seller filters reach order metrics</li></ul></div>
+            <div class="bcard"><h5>DAX</h5>
+              <ul data-ar="<li>مقاييس نسبة التأخير والمتوسطات والتقييم</li><li>تقييم يُحسب لكل طلب (بعض الطلبات لها أكثر من تقييم)</li><li>أعمدة لفئات وقت التجهيز ونوع المسار، مع ترتيب مخصص</li>">
+                <li>Late rate, averages and rating measures</li>
+                <li>Rating averaged per order (some orders have several reviews)</li>
+                <li>Prep-time buckets and route columns, with custom sort order</li></ul>
+              <div class="dax"><span class="k">Avg Review Score</span> =<br><span class="f">AVERAGEX</span>(orders,<br>&nbsp;&nbsp;<span class="f">CALCULATE</span>(<span class="f">AVERAGE</span>(reviews[review_score])))</div></div>
+            <div class="bcard"><h5 data-ar="التصميم">Design</h5>
+              <ul data-ar="<li>ثيم مخصص وتخطيط ثابت 1280×720</li><li>لون لكل معنى: الأحمر للتأخير، والرمادي للسياق</li><li>عناوين الرسومات تقول النتيجة</li><li>فلاتر مشتركة وأزرار تنقل بين الصفحات</li>">
+                <li>Custom theme and a fixed 1280×720 grid</li>
+                <li>One colour per meaning: red for late, grey for context</li>
+                <li>Chart titles state the finding</li>
+                <li>Synced filters and page navigation</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-foot">
+        <span data-ar='البيانات: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Olist Brazilian E-Commerce</a> من Kaggle · يناير 2017 إلى أغسطس 2018'>Data: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Olist Brazilian E-Commerce</a> (Kaggle) · Jan 2017 – Aug 2018</span>
+        <a href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener" data-ar="ملفات المشروع على GitHub ↗">Project files on GitHub ↗</a>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- ═══════════ WORK ═══════════ -->
-<section class="sec" id="work">
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section class="sec" id="experience">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title" data-ar="الأعمال <em>المختارة</em>">Selected <em>Work</em></h2>
-      <p class="sec-sub" data-ar="مشروع تحليلي كامل ومتاح للعامة، وأنظمة بُنيت داخل عمليات حج حيّة حيث الموعد النهائي هو الموسم نفسه.">A public, end-to-end analytics project, plus systems built inside live Hajj operations, where the deadline is the season itself.</p>
+      <span class="eyebrow" data-ar="الخبرة">Experience</span>
+      <h2 data-ar="أنظمة بنيتها داخل عمليات حج حيّة">Systems I built inside live Hajj operations</h2>
+      <p data-ar="موسمين في فريق البيانات بشركة زمام القوة، حيث الموعد النهائي هو الموسم نفسه.">Two seasons on the data team at Zimam Al Quwa, where the deadline is the season itself.</p>
     </div>
-    <hr class="rule sec-rule rv">
 
-    <!-- 01 -->
-    <article class="case rv">
-      <span class="case-idx">01</span>
-      <div class="case-top">
-        <h3 data-ar="لوحة أداء التوصيل — Olist">Olist Delivery Performance</h3>
-        <span class="tag" data-ar="مشروع عام · Power BI">Public project · Power BI</span>
-      </div>
-      <p class="lede" data-ar="داشبورد Power BI يحلل حوالي 96 ألف طلب من متجر إلكتروني برازيلي، ليجاوب على سؤال واحد: كم مرة تتأخر الطلبات، وليش، وكم يكلّف هذا التأخير من رضا العميل.">
-        A Power BI dashboard analysing ~96,000 delivered orders from a Brazilian e-commerce marketplace,
-        to answer one question: how often do orders arrive late, why, and what does it cost in customer satisfaction?
-      </p>
-      <a class="shot" href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener">
-        <img src="images/olist-overview.jpg" alt="Overview page of the Olist Delivery Performance dashboard" loading="lazy">
-      </a>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="أبرز النتائج">Key findings</h4>
-          <ul data-ar="<li>8.1% من الطلبات توصل متأخرة، وتقييمها 2.6 من 5 مقابل 4.3 للطلبات اللي وصلت في وقتها</li><li>الشحن هو سبب أغلب التأخير: 25 يوم في الشحن مقابل 7 للطلبات العادية</li><li>الطلبات بين ولايتين تتأخر أكثر بحوالي 50%، والتأخير يقفز في مواسم الذروة</li><li>الطلب اللي يمسكه البائع 11 يوم أو أكثر يتأخر 38% من المرات</li>">
-            <li>8.1% of orders arrive late, and they are rated 2.6 / 5 vs 4.3 for on-time orders</li>
-            <li>Shipping drives most of the delay: 25 days in transit vs 7 for on-time orders</li>
-            <li>Cross-state orders are late about 50% more often, and delays spike in peak seasons</li>
-            <li>Orders held by the seller for 11+ days are late 38% of the time</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>تنظيف البيانات في Power Query، مع معالجة حوالي 1,350 طلب فيها تواريخ مستحيلة بدل حذفها</li><li>موديل Star schema ومقاييس DAX لنسبة التأخير والتقييم ومراحل التوصيل</li><li>داشبورد من 3 صفحات بفلاتر مشتركة وأزرار تنقل وعناوين تقول النتيجة</li><li>توصيات عملية لفريق العمليات</li>">
-            <li>Data cleaning in Power Query, fixing ~1,350 orders with impossible timestamps instead of deleting them</li>
-            <li>A star-schema model and DAX measures for late rate, ratings and delivery stages</li>
-            <li>A 3-page dashboard with synced filters, page navigation and finding-led chart titles</li>
-            <li>Practical recommendations for an operations team</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span>
-          <span class="chip">Data Modeling</span></div></div>
-        <div class="blk"><h4 data-ar="الحجم">Scale</h4><div class="figs">
-          <div class="fig"><b>96K</b><span data-ar="طلب">orders</span></div>
-          <div class="fig"><b>5</b><span data-ar="جداول">tables</span></div>
-          <div class="fig"><b>3</b><span data-ar="صفحات">pages</span></div></div></div>
-      </div>
-      <div class="proj-links">
-        <a class="proj-btn primary" href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener" data-ar="عرض المشروع على GitHub ↗">View on GitHub ↗</a>
-        <a class="proj-btn" href="https://github.com/DsMohammedHarbi/olist-delivery-performance/blob/main/olist_operations.pdf" target="_blank" rel="noopener" data-ar="الداشبورد PDF ↗">Dashboard PDF ↗</a>
-      </div>
-    </article>
+    <div class="timeline rv">
+      <div class="role-card"><span class="when" data-ar="فبراير – يونيو 2026">Feb – Jun 2026</span><h4 data-ar="محلل بيانات">Data Analyst</h4><span class="org" data-ar="زمام القوة · نسك امتثال، حاج بلا حقيبة، بيان الأركاب">Zimam Al Quwa · Nusuk Imtithal, Hajj Without Bags, Bayan Al-Arkab</span>
+        <p data-ar="معالجة ورفع بيانات 180+ شركة خدمة، واستعلامات SQL على قاعدة بيانات إنتاجية، وقرابة 1,000 تقرير وملف تشغيلي في الموسم.">Processed and uploaded data for 180+ service companies, wrote SQL against the production database, and delivered close to 1,000 reports and operational files per season.</p></div>
+      <div class="role-card"><span class="when" data-ar="مارس – أغسطس 2025">Mar – Aug 2025</span><h4 data-ar="محلل بيانات · تدريب تعاوني">Data Analyst · Co-op training</h4><span class="org" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</span>
+        <p data-ar="دعم معالجة وتنظيف ورفع البيانات، وفحوصات جودة البيانات، وتجهيز تقارير متابعة الامتثال الميداني.">Supported data processing, cleaning and upload, ran data-quality checks, and prepared reports tracking field compliance.</p></div>
+      <div class="role-card"><span class="when" data-ar="2023 – 2024">2023 – 2024</span><h4 data-ar="وكيل منصة">Platform Agent</h4><span class="org" data-ar="شركة اليمامة">Al Yamamah Company</span>
+        <p data-ar="متابعة العمليات اليومية على منصات الحج التشغيلية، والتنسيق مع الفرق الميدانية.">Monitored daily operations on Hajj operational platforms and coordinated with field teams.</p></div>
+    </div>
 
-    <!-- 02 -->
-    <article class="case rv">
-      <span class="case-idx">02</span>
-      <div class="case-top">
-        <h3 data-ar="الإسناد — منصة إسناد الرحلات">Isnad — Trip Assignment Platform</h3>
-        <span class="tag" data-ar="زمام القوة · حاج بلا حقيبة">Zimam Al Quwa · Hajj Without Bags</span>
-      </div>
-      <p class="lede" data-ar="منصة ويب تُسند رحلات النقل في الحج إلى المراقبين الميدانيين المسؤولين عن متابعتها — بديلاً عن عملية تعتمد على جداول Excel لم تعد تواكب موسماً يعمل بشكل حي.">
-        A web platform that assigns Hajj transport trips to the field monitors responsible for
-        observing them — replacing a spreadsheet-driven process that could not keep pace with a live season.
-      </p>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="المشكلة">The problem</h4>
-          <p data-ar="مئات الرحلات لازم تُطابَق مع عدد محدود من المراقبين الميدانيين عبر مناطق جغرافية متعددة — كل يوم، والجدول يتغيّر باستمرار.">Hundreds of flights had to be matched to a limited pool of field monitors across
-          multiple geographic areas — every day, while the schedule kept moving.</p></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>استيراد الخطط التشغيلية من Excel مباشرة إلى مخزن منظّم</li><li>مطابقة جغرافية للرحلات مع مناطق المراقبة، مع مراجعة على الخريطة</li><li>توزيع متوازن لحمل العمل اليومي على فريق المراقبة</li><li>صلاحيات حسب الدور: مسؤولون، قادة فرق، مراقبون ميدانيون</li><li>واجهة للجوال تُمكّن المراقبين من العمل من الميدان</li>">
-            <li>Operational plans ingested straight from Excel into a structured store</li>
-            <li>Geographic matching of trips to monitoring zones, reviewed on a map</li>
-            <li>Balanced distribution of daily workload across the monitoring team</li>
-            <li>Role-based access for administrators, team leads, and field monitors</li>
-            <li>A mobile view so monitors could work from the field</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span>
-          <span class="chip">Shapely</span><span class="chip">Vue.js</span><span class="chip">Leaflet</span>
-          <span class="chip">Gunicorn</span></div></div>
-        <div class="blk"><h4 data-ar="الحجم">Scale</h4><div class="figs">
-          <div class="fig"><b>400+</b><span data-ar="رحلة">flights</span></div>
-          <div class="fig"><b>100+</b><span data-ar="مراقب">monitors</span></div>
-          <div class="fig"><b>6.4K</b><span data-ar="سطر برمجي">lines</span></div></div></div>
-      </div>
-      <div class="locked">
-        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        <span data-ar="ملكية خاصة — بُنيت لشركة زمام القوة. الكود ولقطات الشاشة غير متاحة للعامة.">Proprietary — built for Zimam Al Quwa. Source code and screenshots are not public.</span>
-      </div>
-    </article>
+    <div class="cases">
+      <article class="case rv">
+        <div class="case-head"><div><h3 data-ar="الإسناد — منصة إسناد الرحلات">Isnad — Trip Assignment Platform</h3><div class="org" data-ar="زمام القوة · حاج بلا حقيبة">Zimam Al Quwa · Hajj Without Bags</div></div><span class="num">01</span></div>
+        <p class="sum" data-ar="منصة ويب تُسند رحلات النقل في الحج للمراقبين الميدانيين، بديلاً عن عملية تعتمد على Excel ما عادت تواكب موسماً حيّاً.">A web platform that assigns Hajj transport trips to field monitors — replacing a spreadsheet process that couldn't keep pace with a live season.</p>
+        <div class="figs"><div class="fig"><b>400+</b><span data-ar="رحلة">flights</span></div><div class="fig"><b>100+</b><span data-ar="مراقب">monitors</span></div><div class="fig"><b>6.4K</b><span data-ar="سطر برمجي">lines of code</span></div></div>
+        <details><summary data-ar="التفاصيل">Details</summary><div class="in">
+          <h5 data-ar="المشكلة">The problem</h5><p data-ar="مئات الرحلات لازم تُطابَق مع عدد محدود من المراقبين عبر مناطق متعددة، كل يوم، والجدول يتغير باستمرار.">Hundreds of flights had to be matched to a limited pool of monitors across multiple areas — every day, while the schedule kept moving.</p>
+          <h5 data-ar="ما بنيته">What I built</h5><ul data-ar="<li>استيراد الخطط من Excel مباشرة</li><li>مطابقة جغرافية للرحلات مع مناطق المراقبة على الخريطة</li><li>توزيع متوازن لحمل العمل اليومي</li><li>صلاحيات حسب الدور، وواجهة للجوال</li>"><li>Operational plans ingested straight from Excel</li><li>Geographic matching of trips to monitoring zones, reviewed on a map</li><li>Balanced daily workload across the team</li><li>Role-based access and a mobile view for the field</li></ul></div></details>
+        <div class="stack-row"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">Shapely</span><span class="chip">Vue.js</span><span class="chip">Leaflet</span></div>
+        <div class="lock"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-ar="ملكية خاصة لشركة زمام القوة — الكود ولقطات الشاشة غير متاحة.">Proprietary to Zimam Al Quwa — code and screenshots not public.</span></div>
+      </article>
 
-    <!-- 03 -->
-    <article class="case rv">
-      <span class="case-idx">03</span>
-      <div class="case-top">
-        <h3 data-ar="نظام تنظيف بيانات الحج">Hajj Data Cleaning System</h3>
-        <span class="tag" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</span>
-      </div>
-      <p class="lede" data-ar="أداة تنظيف ذاتية الخدمة حوّلت شغل فريق البيانات المتكرر والمعرّض للخطأ في Excel إلى بايبلاينات قابلة للتكرار يقدر أي أحد في الفريق يشغّلها.">
-        A self-service cleaning tool that turned the data team's repetitive, error-prone Excel
-        work into repeatable pipelines anyone on the team could run.
-      </p>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="المشكلة">The problem</h4>
-          <p data-ar="الملفات التشغيلية تصل من مصادر متعددة بأشكال غير متسقة، وكل نسخة جديدة تهدّد بكسر المعرّفات التي تعتمد عليها التقارير اللاحقة.">Operational files arrived from many sources in inconsistent shapes, and every new
-          version risked breaking the identifiers downstream reports depended on.</p></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>ستة بايبلاينات تنظيف تغطي المخيمات والمساكن وبيانات الحجاج</li><li>ربط معرّفات ثابت — المعرّفات تبقى مستقرة بين نسخ الملفات</li><li>إزالة تكرار آلية، مع عزل الصفوف المرفوضة للمراجعة بدل حذفها</li><li>عرض مقارنة يبيّن بالضبط ما تغيّر بين ملفين</li><li>واجهة متصفح تُمكّن الفريق من تشغيلها بدون لمس الكود</li>">
-            <li>Six cleaning pipelines covering camps, housing, and pilgrim datasets</li>
-            <li>Persistent identifier mapping — record IDs stay stable across file versions</li>
-            <li>Automated deduplication, with rejected rows quarantined rather than dropped</li>
-            <li>A version-comparison view showing exactly what changed between two files</li>
-            <li>A browser interface, so the team could run it without touching code</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">Python</span><span class="chip">Pandas</span>
-          <span class="chip">Streamlit</span><span class="chip">openpyxl</span></div></div>
-        <div class="blk"><h4 data-ar="الحجم">Scale</h4><div class="figs">
-          <div class="fig"><b>180+</b><span data-ar="شركة">companies</span></div>
-          <div class="fig"><b>2,000+</b><span data-ar="وحدة سكنية">housing units</span></div>
-          <div class="fig"><b>500+</b><span data-ar="مخيم">camps</span></div></div></div>
-      </div>
-      <div class="locked">
-        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        <span data-ar="ملكية خاصة — بُنيت لشركة زمام القوة. الكود ولقطات الشاشة غير متاحة للعامة.">Proprietary — built for Zimam Al Quwa. Source code and screenshots are not public.</span>
-      </div>
-    </article>
+      <article class="case rv">
+        <div class="case-head"><div><h3 data-ar="نظام تنظيف بيانات الحج">Hajj Data Cleaning System</h3><div class="org" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</div></div><span class="num">02</span></div>
+        <p class="sum" data-ar="أداة تنظيف ذاتية الخدمة حوّلت شغل Excel المتكرر والمعرّض للخطأ إلى بايبلاينات يقدر أي أحد في الفريق يشغّلها.">A self-service cleaning tool that turned repetitive, error-prone Excel work into pipelines anyone on the team could run.</p>
+        <div class="figs"><div class="fig"><b>180+</b><span data-ar="شركة">companies</span></div><div class="fig"><b>2,000+</b><span data-ar="وحدة سكنية">housing units</span></div><div class="fig"><b>500+</b><span data-ar="مخيم">camps</span></div></div>
+        <details><summary data-ar="التفاصيل">Details</summary><div class="in">
+          <h5 data-ar="المشكلة">The problem</h5><p data-ar="الملفات تصل من مصادر متعددة بأشكال غير متسقة، وكل نسخة جديدة تهدد بكسر المعرّفات اللي تعتمد عليها التقارير.">Files arrived from many sources in inconsistent shapes, and every new version risked breaking the identifiers reports depended on.</p>
+          <h5 data-ar="ما بنيته">What I built</h5><ul data-ar="<li>ستة بايبلاينات تنظيف للمخيمات والمساكن وبيانات الحجاج</li><li>معرّفات ثابتة بين نسخ الملفات</li><li>إزالة تكرار آلية، مع عزل الصفوف المرفوضة بدل حذفها</li><li>مقارنة تبيّن وش تغيّر بين ملفين، وواجهة بدون كود</li>"><li>Six cleaning pipelines for camps, housing and pilgrim data</li><li>Persistent IDs that stay stable across file versions</li><li>Automated deduplication, quarantining rejected rows instead of dropping them</li><li>A version-comparison view and a no-code browser interface</li></ul></div></details>
+        <div class="stack-row"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Streamlit</span><span class="chip">openpyxl</span></div>
+        <div class="lock"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-ar="ملكية خاصة لشركة زمام القوة — الكود ولقطات الشاشة غير متاحة.">Proprietary to Zimam Al Quwa — code and screenshots not public.</span></div>
+      </article>
 
-    <!-- 04 -->
-    <article class="case rv">
-      <span class="case-idx">04</span>
-      <div class="case-top">
-        <h3 data-ar="إمتثال — مساحة عمل الفريق الداخلية">Imtithal — Internal Team Workspace</h3>
-        <span class="tag" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</span>
-      </div>
-      <p class="lede" data-ar="مركز داخلي صغير يجمع المعرفة المشتركة لفريق البيانات في مكان واحد، حتى يتوقف تكرار نفس الشغل من أربعة أشخاص مختلفين.">
-        A small internal hub that collected the data team's shared knowledge in one place, so
-        the same work stopped being redone by four different people.
-      </p>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="المشكلة">The problem</h4>
-          <p data-ar="استعلامات التقارير والسكربتات المساعدة وخطوات المقارنة كانت متناثرة على الأجهزة الشخصية والمحادثات — وتُعاد كتابتها من الصفر كل موسم.">Reporting queries, helper scripts, and comparison steps lived scattered across
-          personal machines and chat threads — rewritten from scratch each season.</p></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>مكتبة مشتركة قابلة للبحث لاستعلامات التقارير</li><li>سكربتات قابلة لإعادة الاستخدام مع ملاحظات استخدام</li><li>أداة مقارنة للتحقق من نسختين من مجموعة بيانات</li><li>تتبّع مساهمات كل عضو للحفاظ على حداثة المكتبة</li>">
-            <li>A shared, searchable library of the team's reporting queries</li>
-            <li>Reusable scripts collected with usage notes</li>
-            <li>A comparison utility for checking two versions of a dataset</li>
-            <li>Per-member contribution tracking to keep the library current</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
-        <div class="blk"><h4 data-ar="النتيجة">Outcome</h4>
-          <p data-ar="اعتُمدت كمرجع يومي لفريق البيانات خلال الموسم.">Adopted as the daily reference for the data team through the season.</p></div>
-      </div>
-      <div class="locked">
-        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        <span data-ar="ملكية خاصة — بُنيت لشركة زمام القوة. الكود غير متاح للعامة.">Proprietary — built for Zimam Al Quwa. Source code is not public.</span>
-      </div>
-    </article>
+      <article class="case rv">
+        <div class="case-head"><div><h3 data-ar="امتثال — مساحة عمل الفريق">Imtithal — Team Workspace</h3><div class="org" data-ar="زمام القوة · نسك امتثال">Zimam Al Quwa · Nusuk Imtithal</div></div><span class="num">03</span></div>
+        <p class="sum" data-ar="مركز داخلي يجمع معرفة فريق البيانات في مكان واحد، عشان يتوقف تكرار نفس الشغل من أكثر من شخص.">An internal hub that collected the data team's shared knowledge in one place, so the same work stopped being redone by different people.</p>
+        <details><summary data-ar="التفاصيل">Details</summary><div class="in">
+          <h5 data-ar="المشكلة">The problem</h5><p data-ar="استعلامات التقارير والسكربتات كانت متناثرة على الأجهزة والمحادثات، وتنكتب من الصفر كل موسم.">Reporting queries and helper scripts were scattered across machines and chats — rewritten from scratch each season.</p>
+          <h5 data-ar="ما بنيته">What I built</h5><ul data-ar="<li>مكتبة مشتركة قابلة للبحث لاستعلامات SQL</li><li>سكربتات قابلة لإعادة الاستخدام مع ملاحظات</li><li>أداة لمقارنة نسختين من البيانات</li>"><li>A shared, searchable SQL query library</li><li>Reusable scripts with usage notes</li><li>A utility for comparing two versions of a dataset</li></ul></div></details>
+        <div class="stack-row"><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+        <div class="lock"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-ar="ملكية خاصة لشركة زمام القوة — الكود غير متاح.">Proprietary to Zimam Al Quwa — code not public.</span></div>
+      </article>
 
-    <!-- 05 -->
-    <article class="case rv">
-      <span class="case-idx">05</span>
-      <div class="case-top">
-        <h3 data-ar="بيان الأركاب — نظام الحضور">Bayan Al-Arkab — Attendance System</h3>
-        <span class="tag" data-ar="زمام القوة">Zimam Al Quwa</span>
-      </div>
-      <p class="lede" data-ar="نظام حضور وغياب فوري لبرنامج عمليات ميداني — بديلاً عن التتبع الورقي وجداول Excel بسجل حيّ يقدر المشرفون تحديثه في الموقع.">
-        A real-time attendance system for a field operations program — replacing paper and
-        spreadsheet tracking with a live record supervisors could update on site.
-      </p>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="المشكلة">The problem</h4>
-          <p data-ar="الحضور لقوة عاملة موزّعة كان يُسجَّل يدوياً ولا يُطابَق إلا لاحقاً، مما جعل قرارات التشغيل في نفس اليوم مجرد تخمين.">Attendance for a distributed workforce was recorded manually and reconciled only
-          later, which made same-day staffing decisions guesswork.</p></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>سجلات الموظفين والأقسام والمشرفين في مخزن حيّ واحد</li><li>تسجيل حضور يومي بظهور فوري للمشرفين</li><li>لوحة تلخّص الحضور حسب القسم وحسب اليوم</li><li>عروض منفصلة للمسؤولين والمشرفين والموظفين</li><li>أرشفة الحضور التاريخي للتقارير اللاحقة</li>">
-            <li>Employee, department, and supervisor records in one live store</li>
-            <li>Daily attendance capture with immediate visibility for supervisors</li>
-            <li>A dashboard summarising attendance by department and by day</li>
-            <li>Separate views for administrators, supervisors, and employees</li>
-            <li>Archiving of historical attendance for later reporting</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">JavaScript</span><span class="chip">Firebase Firestore</span>
-          <span class="chip">Node.js</span><span class="chip">Express</span></div></div>
-        <div class="blk"><h4 data-ar="البنية">Shape</h4><div class="figs">
-          <div class="fig"><b>5</b><span data-ar="مجموعة بيانات">data collections</span></div>
-          <div class="fig"><b>3</b><span data-ar="مستوى صلاحيات">access roles</span></div></div></div>
-      </div>
-      <div class="locked">
-        <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        <span data-ar="ملكية خاصة — بُنيت لشركة زمام القوة. الكود ولقطات الشاشة غير متاحة للعامة.">Proprietary — built for Zimam Al Quwa. Source code and screenshots are not public.</span>
-      </div>
-    </article>
-
-    <!-- 06 -->
-    <article class="case rv">
-      <span class="case-idx">06</span>
-      <div class="case-top">
-        <h3 data-ar="أداة جدولة الرحلات التشغيلية">Operational Trip Scheduling Tool</h3>
-        <span class="tag" data-ar="أداة تعمل في المتصفح">Browser-based utility</span>
-      </div>
-      <p class="lede" data-ar="أداة من صفحة واحدة تبني جدول رحلات تشغيلي من ملف Excel مرفوع — كل شيء يعمل داخل المتصفح، ولا تُخزَّن أي بيانات ولا تُرسل لأي مكان.">
-        A single-page tool that builds an operational trip schedule from an uploaded
-        spreadsheet — everything runs in the browser, and no data is stored or sent anywhere.
-      </p>
-      <div class="grid">
-        <div class="blk"><h4 data-ar="المشكلة">The problem</h4>
-          <p data-ar="بناء جدول الموسم كان يعني تكرار نفس خطوات Excel اليدوية، ومع كل مرة فرصة جديدة للخطأ.">Building a season schedule meant repeating the same manual spreadsheet steps, with
-          a fresh chance to make a mistake each time.</p></div>
-        <div class="blk"><h4 data-ar="ما بنيته">What I built</h4>
-          <ul data-ar="<li>قراءة Excel كاملة داخل المتصفح — بدون سيرفر وبدون رفع</li><li>توليد جدول تلقائي من الخطة المرفوعة</li><li>تصدير رجوعاً إلى Excel ليناسب سير العمل الحالي</li>">
-            <li>Excel parsing entirely client-side — no server, no upload</li>
-            <li>Automatic schedule generation from the uploaded plan</li>
-            <li>Export back to Excel to fit the existing workflow</li>
-          </ul></div>
-        <div class="blk"><h4 data-ar="التقنيات">Stack</h4><div class="chips">
-          <span class="chip">JavaScript</span><span class="chip">SheetJS</span><span class="chip">HTML</span></div></div>
-        <div class="blk"><h4 data-ar="ملاحظة">Note</h4>
-          <p data-ar="تعمل بدون إنترنت. لا قاعدة بيانات، ولا تتبّع، ولا شيء يغادر الجهاز.">Runs offline. No database, no telemetry, nothing leaves the machine.</p></div>
-      </div>
-    </article>
-
+      <article class="case rv">
+        <div class="case-head"><div><h3 data-ar="بيان الأركاب — نظام الحضور">Bayan Al-Arkab — Attendance System</h3><div class="org" data-ar="زمام القوة">Zimam Al Quwa</div></div><span class="num">04</span></div>
+        <p class="sum" data-ar="نظام حضور فوري لبرنامج عمليات ميداني، بديلاً عن الورق وExcel بسجل حيّ يحدّثه المشرفون من الموقع.">A real-time attendance system for a field program — replacing paper and spreadsheets with a live record supervisors update on site.</p>
+        <div class="figs"><div class="fig"><b>5</b><span data-ar="مجموعات بيانات">data collections</span></div><div class="fig"><b>3</b><span data-ar="مستويات صلاحيات">access roles</span></div></div>
+        <details><summary data-ar="التفاصيل">Details</summary><div class="in">
+          <h5 data-ar="المشكلة">The problem</h5><p data-ar="الحضور كان يُسجَّل يدوياً ويُطابَق لاحقاً، فقرارات التشغيل في نفس اليوم كانت تخمين.">Attendance was recorded manually and reconciled later, so same-day staffing decisions were guesswork.</p>
+          <h5 data-ar="ما بنيته">What I built</h5><ul data-ar="<li>سجلات الموظفين والأقسام في مخزن حيّ واحد</li><li>تسجيل حضور يومي بظهور فوري للمشرفين</li><li>لوحة تلخّص الحضور حسب القسم واليوم</li>"><li>Employee and department records in one live store</li><li>Daily attendance with immediate visibility for supervisors</li><li>A dashboard summarising attendance by department and day</li></ul></div></details>
+        <div class="stack-row"><span class="chip">JavaScript</span><span class="chip">Firebase Firestore</span><span class="chip">Node.js</span></div>
+        <div class="lock"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-ar="ملكية خاصة لشركة زمام القوة — الكود ولقطات الشاشة غير متاحة.">Proprietary to Zimam Al Quwa — code and screenshots not public.</span></div>
+      </article>
+      <article class="case rv">
+        <div class="case-head"><div><h3 data-ar="أداة جدولة الرحلات التشغيلية">Operational Trip Scheduling Tool</h3><div class="org" data-ar="أداة تعمل في المتصفح">Browser-based utility</div></div><span class="num">05</span></div>
+        <p class="sum" data-ar="أداة من صفحة واحدة تبني جدول رحلات تشغيلي من ملف Excel مرفوع. كل شي يشتغل داخل المتصفح، وما تنحفظ أي بيانات ولا تنرسل لأي مكان.">A single-page tool that builds an operational trip schedule from an uploaded spreadsheet — everything runs in the browser, and no data is stored or sent anywhere.</p>
+        <details><summary data-ar="التفاصيل">Details</summary><div class="in">
+          <h5 data-ar="المشكلة">The problem</h5><p data-ar="بناء جدول الموسم كان يعني تكرار نفس خطوات Excel اليدوية، ومع كل مرة فرصة جديدة للخطأ.">Building a season schedule meant repeating the same manual spreadsheet steps, with a fresh chance of error each time.</p>
+          <h5 data-ar="ما بنيته">What I built</h5><ul data-ar="<li>قراءة Excel داخل المتصفح بدون سيرفر</li><li>توليد الجدول تلقائياً من الخطة المرفوعة</li><li>تصدير رجوعاً إلى Excel</li>"><li>Excel parsing entirely in the browser — no server</li><li>Automatic schedule generation from the uploaded plan</li><li>Export back to Excel</li></ul></div></details>
+        <div class="stack-row"><span class="chip">JavaScript</span><span class="chip">SheetJS</span><span class="chip">HTML</span></div>
+        <div class="lock"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-ar="تعمل بدون إنترنت، وما يطلع أي شي من الجهاز.">Runs offline — nothing leaves the machine.</span></div>
+      </article>
+    </div>
   </div>
 </section>
 
 <!-- ═══════════ SKILLS ═══════════ -->
-<section class="sec" id="skills">
+<section class="sec soft" id="skills">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title" data-ar="<em>الأدوات</em>"><em>Toolkit</em></h2>
-      <p class="sec-sub" data-ar="ما أستخدمه، تقريباً بترتيب استخدامي له.">What I reach for, roughly in the order I reach for it.</p>
+      <span class="eyebrow" data-ar="المهارات">Skills</span>
+      <h2 data-ar="الأدوات اللي أشتغل فيها">The tools I work with</h2>
+      <p data-ar="وكل وحدة منها استخدمتها في شغل حقيقي.">Each one used in real work, not just listed.</p>
     </div>
-    <hr class="rule sec-rule rv">
-  </div>
-
-  <div class="marquee rv">
-    <div class="track">
-      <span class="mchip">Python</span><span class="mchip">Pandas</span><span class="mchip">SQL</span>
-      <span class="mchip">Microsoft Excel</span><span class="mchip">NumPy</span><span class="mchip">Power Query</span>
-      <span class="mchip">Data Cleaning</span><span class="mchip">Pivot Tables</span><span class="mchip">Streamlit</span>
-      <span class="mchip">Power BI</span><span class="mchip">Flask</span><span class="mchip">Git</span>
-      <span class="mchip">Python</span><span class="mchip">Pandas</span><span class="mchip">SQL</span>
-      <span class="mchip">Microsoft Excel</span><span class="mchip">NumPy</span><span class="mchip">Power Query</span>
-      <span class="mchip">Data Cleaning</span><span class="mchip">Pivot Tables</span><span class="mchip">Streamlit</span>
-      <span class="mchip">Power BI</span><span class="mchip">Flask</span><span class="mchip">Git</span>
-    </div>
-  </div>
-  <div class="marquee rv">
-    <div class="track rev">
-      <span class="mchip">ETL Pipelines</span><span class="mchip">Data Quality</span><span class="mchip">Deduplication</span>
-      <span class="mchip">Reporting</span><span class="mchip">Dashboards</span><span class="mchip">Firebase</span>
-      <span class="mchip">Data Modelling</span><span class="mchip">Automation</span><span class="mchip">openpyxl</span>
-      <span class="mchip">Stakeholder Reporting</span><span class="mchip">Validation</span>
-      <span class="mchip">ETL Pipelines</span><span class="mchip">Data Quality</span><span class="mchip">Deduplication</span>
-      <span class="mchip">Reporting</span><span class="mchip">Dashboards</span><span class="mchip">Firebase</span>
-      <span class="mchip">Data Modelling</span><span class="mchip">Automation</span><span class="mchip">openpyxl</span>
-      <span class="mchip">Stakeholder Reporting</span><span class="mchip">Validation</span>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="skill-note rv">
-      <div class="snote"><b data-ar="بايثون">Python</b><span data-ar="Pandas و NumPy، بايبلاينات تنظيف، أتمتة، وتطبيقات Streamlit و Flask.">Pandas, NumPy, cleaning pipelines, automation, Streamlit &amp; Flask apps.</span></div>
-      <div class="snote"><b>SQL</b><span data-ar="ربط جداول متعددة، تجميعات، واستعلامات تقارير على أنظمة إنتاجية.">Multi-table joins, aggregations, and reporting queries against production systems.</span></div>
-      <div class="snote"><b data-ar="إكسل">Excel</b><span data-ar="معادلات متقدمة، جداول محورية، Power Query، وتقارير على مدى الموسم.">Advanced formulas, pivot tables, Power Query, season-long reporting.</span></div>
-      <div class="snote"><b data-ar="جودة البيانات">Data quality</b><span data-ar="تحقق، إزالة تكرار، معرّفات مستقرة، وعزل الصفوف الفاسدة.">Validation, deduplication, stable identifiers, and quarantining bad rows.</span></div>
+    <div class="skills">
+      <div class="skill feature rv"><div class="skill-ic">BI</div><h4>Power BI</h4>
+        <p data-ar="بناء داشبوردات من الصفر: تنظيف البيانات في Power Query، وتصميم موديل Star schema، وكتابة مقاييس DAX، وتصميم صفحات واضحة بفلاتر مشتركة وتنقل بين الصفحات وعناوين تقول النتيجة.">Building dashboards end to end: cleaning data in Power Query, designing a star-schema model, writing DAX measures, and laying out clear pages with synced filters, page navigation and finding-led titles.</p>
+        <div class="stack-row"><span class="chip hl">Power Query</span><span class="chip hl">DAX</span><span class="chip hl" data-ar="نمذجة البيانات">Data modeling</span><span class="chip hl" data-ar="تصميم الداشبورد">Dashboard design</span></div>
+        <a class="proof" href="#project" data-ar="شاهد المشروع ↑">See the project ↑</a></div>
+      <div class="skill rv"><div class="skill-ic">SQL</div><h4>SQL</h4>
+        <p data-ar="ربط جداول متعددة وتجميعات واستعلامات تقارير على قاعدة بيانات إنتاجية فيها أكثر من 40 جدول.">Multi-table joins, aggregations and reporting queries against a production database with 40+ tables.</p></div>
+      <div class="skill rv"><div class="skill-ic">Py</div><h4>Python</h4>
+        <p data-ar="Pandas وNumPy لبايبلاينات التنظيف والأتمتة، وتطبيقات Streamlit وFlask للفريق.">Pandas and NumPy for cleaning pipelines and automation, plus Streamlit and Flask apps for the team.</p></div>
+      <div class="skill rv"><div class="skill-ic">XL</div><h4>Excel</h4>
+        <p data-ar="معادلات متقدمة، وجداول محورية، وPower Query، وتقارير تشغيلية طوال الموسم.">Advanced formulas, pivot tables, Power Query and season-long operational reporting.</p></div>
+      <div class="skill rv"><div class="skill-ic">DQ</div><h4 data-ar="جودة البيانات">Data quality</h4>
+        <p data-ar="التحقق، وإزالة التكرار، والمعرّفات الثابتة، ومعالجة القيم الغلط بدون ما أخسر البيانات الصحيحة.">Validation, deduplication, stable identifiers, and fixing bad values without losing good data.</p></div>
     </div>
   </div>
 </section>
@@ -738,31 +593,32 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
 <section class="sec" id="education">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">03</span>
-      <h2 class="sec-title" data-ar="<em>التعليم</em>"><em>Education</em></h2>
+      <span class="eyebrow" data-ar="التعليم">Education</span>
+      <h2 data-ar="التعليم واللغات">Education &amp; languages</h2>
     </div>
-    <hr class="rule sec-rule rv">
-    <div class="edu-card rv">
+    <div class="edu rv">
       <div>
-        <h3 data-ar="بكالوريوس العلوم في علوم البيانات">Bachelor of Science in Data Science</h3>
-        <p data-ar="جامعة أم القرى — مكة المكرمة، السعودية">Umm Al-Qura University — Makkah, Saudi Arabia</p>
+        <h3 data-ar="بكالوريوس علوم البيانات">Bachelor of Science in Data Science</h3>
+        <p data-ar="جامعة أم القرى — مكة المكرمة">Umm Al-Qura University — Makkah, Saudi Arabia</p>
+        <div class="langs"><span class="chip" data-ar="العربية · اللغة الأم">Arabic · Native</span><span class="chip" data-ar="الإنجليزية · إجادة عمل مهنية">English · Professional working proficiency</span></div>
       </div>
-      <div class="edu-year">2026</div>
+      <div class="yr">2026</div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════ CONTACT ═══════════ -->
-<section class="cta" id="contact">
+<section class="sec" id="contact" style="padding-top:0">
   <div class="wrap">
-    <span class="sec-num rv" style="display:block;margin-bottom:18px" data-ar="04 · تواصل">04 · Contact</span>
-    <h2 class="rv" data-ar="لنبنِ شيئاً<br><em>يُعتمد عليه.</em>">Let's build<br>something <em>reliable.</em></h2>
-    <p class="rv" data-ar="متاح لوظائف محلل بيانات ومحلل ذكاء أعمال في السعودية — حضورياً أو عن بُعد.">Open to Data Analyst and BI Analyst roles across Saudi Arabia — on site or remote.</p>
-    <div class="cta-actions rv">
-      <a class="btn btn-primary" href="mailto:ds.mohammedd@gmail.com" data-ar="تواصل معي">Get in touch</a>
-      <a class="btn btn-ghost" href="Mohammed_Alharbi_Data_Analyst_CV.pdf" target="_blank" rel="noopener" data-ar="تحميل السيرة الذاتية">Download CV</a>
-      <a class="btn btn-ghost" href="tel:+966590082847" dir="ltr">+966 590 082 847</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/mohammed-alharbi-data" target="_blank" rel="noopener" data-ar="لينكدإن">LinkedIn</a>
+    <div class="cta rv">
+      <h2 data-ar="خلنا نحوّل بياناتك<br>إلى قرارات.">Let's turn your data<br>into decisions.</h2>
+      <p data-ar="متاح لوظائف محلل بيانات ومحلل ذكاء أعمال في السعودية، حضورياً أو عن بُعد.">Open to Data Analyst and BI Analyst roles across Saudi Arabia — on site or remote.</p>
+      <div class="cta-actions">
+        <a class="btn btn-white" href="mailto:ds.mohammedd@gmail.com" data-ar="راسلني">Email me</a>
+        <a class="btn btn-line" href="Mohammed_Alharbi_Data_Analyst_CV.pdf" target="_blank" rel="noopener" data-ar="السيرة الذاتية">Download CV</a>
+        <a class="btn btn-line" href="https://linkedin.com/in/mohammed-alharbi-data" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-line" href="tel:+966590082847" dir="ltr">+966 590 082 847</a>
+      </div>
     </div>
   </div>
 </section>
@@ -770,127 +626,85 @@ footer{border-top:1px solid var(--rule);padding:32px 0 44px;background:var(--bg-
 <footer>
   <div class="wrap foot">
     <span data-ar="محمد الحربي — محلل بيانات">Mohammed Alharbi — Data Analyst</span>
-    <span data-ar="العربية (اللغة الأم) · الإنجليزية (إجادة عمل مهنية)">Arabic (native) · English (professional working proficiency)</span>
+    <span data-ar="مكة المكرمة، السعودية">Makkah, Saudi Arabia</span>
   </div>
 </footer>
 
-<button class="totop" id="totop" aria-label="Back to top">
-  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
-
 <script>
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- language ---------- */
+  /* language */
   var i18n = document.querySelectorAll('[data-ar]');
   i18n.forEach(function(el){ el.dataset.en = el.innerHTML; });
   var langBtn = document.getElementById('langBtn');
-  var titles = {
-    en:{t:'Mohammed Alharbi — Data Analyst', d:"Data Analyst. Two Hajj seasons on national-scale operations."},
-    ar:{t:'محمد الحربي — محلل بيانات', d:'محلل بيانات. موسمان من الحج على برامج تشغيلية وطنية.'}
+  var meta = {
+    en:{t:'Mohammed Alharbi — Data Analyst', d:'Data Analyst in Makkah, Saudi Arabia. Power BI dashboards, SQL, Python and Excel.'},
+    ar:{t:'محمد الحربي — محلل بيانات', d:'محلل بيانات في مكة المكرمة. داشبوردات Power BI وSQL وPython وExcel.'}
   };
   function setLang(l){
-    root.lang = l;
-    root.dir = (l === 'ar') ? 'rtl' : 'ltr';
+    root.lang = l; root.dir = (l === 'ar') ? 'rtl' : 'ltr';
     i18n.forEach(function(el){ el.innerHTML = (l === 'ar') ? el.dataset.ar : el.dataset.en; });
     langBtn.textContent = (l === 'ar') ? 'EN' : 'ع';
-    document.title = titles[l].t;
-    var m = document.querySelector('meta[name="description"]');
-    if (m) m.setAttribute('content', titles[l].d);
+    document.title = meta[l].t;
+    var m = document.querySelector('meta[name="description"]'); if (m) m.setAttribute('content', meta[l].d);
     try { localStorage.setItem('lang', l); } catch(e){}
+    updateCaption();
   }
-  var savedLang = null;
-  try { savedLang = localStorage.getItem('lang'); } catch(e){}
-  setLang(savedLang === 'ar' ? 'ar' : 'en');   /* default: English for every new visitor */
-  langBtn.addEventListener('click', function(){
-    setLang(root.lang === 'ar' ? 'en' : 'ar');
+
+  /* screenshot tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+  var cap = document.getElementById('shotCap');
+  var caps = [
+    {en:'Headline KPIs, how lateness affects ratings, and where the time goes — with the seller or in shipping.',
+     ar:'المؤشرات الرئيسية، وأثر التأخير على التقييم، وأين يضيع الوقت: عند البائع أو في الشحن.'},
+    {en:'Late rate by customer state, same-state vs cross-state orders, and the monthly trend.',
+     ar:'نسبة التأخير حسب ولاية العميل، والطلبات داخل الولاية مقابل بين الولايات، والتغير الشهري.'},
+    {en:'A seller scorecard, and how late rate climbs with seller prep time.',
+     ar:'جدول تقييم البائعين، وكيف ترتفع نسبة التأخير مع وقت تجهيز البائع.'}
+  ];
+  var current = 0;
+  function updateCaption(){ var l = root.lang === 'ar' ? 'ar' : 'en'; cap.innerHTML = caps[current][l]; cap.dataset.en = caps[current].en; cap.dataset.ar = caps[current].ar; }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click', function(){
+      current = i;
+      tabs.forEach(function(x,k){ x.classList.toggle('on', k === i); });
+      shots.forEach(function(s,k){ s.classList.toggle('on', k === i); });
+      updateCaption();
+    });
   });
 
-  /* ---------- mobile sheet ---------- */
+  var saved = null; try { saved = localStorage.getItem('lang'); } catch(e){}
+  setLang(saved === 'ar' ? 'ar' : 'en');
+  langBtn.addEventListener('click', function(){ setLang(root.lang === 'ar' ? 'en' : 'ar'); });
+
+  /* mobile menu */
   var sheet = document.getElementById('sheet');
   document.getElementById('burger').addEventListener('click', function(){ sheet.classList.add('open'); });
   document.getElementById('sheetClose').addEventListener('click', function(){ sheet.classList.remove('open'); });
-  sheet.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ sheet.classList.remove('open'); });
-  });
+  sheet.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ sheet.classList.remove('open'); }); });
 
-  /* ---------- scroll state ---------- */
-  var nav = document.getElementById('nav'), prog = document.getElementById('prog'), totop = document.getElementById('totop');
-  function onScroll(){
-    var y = window.scrollY;
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    nav.classList.toggle('stuck', y > 12);
-    totop.classList.toggle('show', y > 700);
-  }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
-
-  /* ---------- active section ---------- */
-  var ids = ['work','skills','education','contact'];
-  var navA = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
-  var dotA = Array.prototype.slice.call(document.querySelectorAll('.dot-link'));
-  if ('IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (!e.isIntersecting) return;
-        var i = ids.indexOf(e.target.id);
-        if (i < 0) return;
-        navA.forEach(function(a,k){ a.classList.toggle('active', k === i); });
-        dotA.forEach(function(d,k){ d.classList.toggle('active', k === i); });
-      });
+  /* nav state + active link */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('stuck', window.scrollY > 8); }, {passive:true});
+  var ids = ['project','experience','skills','education','contact'];
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  if ('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (!e.isIntersecting) return; var i = ids.indexOf(e.target.id);
+        links.forEach(function(a,k){ a.classList.toggle('active', k === i); }); });
     }, {rootMargin:'-45% 0px -50% 0px'});
     ids.forEach(function(id){ var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
-  /* ---------- reveal ---------- */
+  /* reveal */
   var items = document.querySelectorAll('.rv');
-  if (reduce || !('IntersectionObserver' in window)) {
-    items.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
-    items.forEach(function(el, i){
-      el.style.transitionDelay = (Math.min(i,6) * 50) + 'ms';
-      io.observe(el);
-    });
-  }
-
-  /* ---------- count-up ---------- */
-  var nums = document.querySelectorAll('[data-count]');
-  function run(el){
-    var target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
-    if (reduce) { el.textContent = target.toLocaleString('en') + suffix; return; }
-    var start = performance.now(), dur = 1500;
-    function step(now){
-      var p = Math.min((now - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString('en') + (p === 1 ? suffix : '');
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if ('IntersectionObserver' in window) {
-    var io2 = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting) { run(e.target); io2.unobserve(e.target); } });
-    }, {threshold:0.5});
-    nums.forEach(function(n){ io2.observe(n); });
-  } else { nums.forEach(run); }
-
-  /* ---------- pointer glow ---------- */
-  if (!reduce && window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.case').forEach(function(card){
-      card.addEventListener('pointermove', function(ev){
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', (ev.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (ev.clientY - r.top) + 'px');
-      });
-    });
+  if (reduce || !('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.08});
+    items.forEach(function(el){ io.observe(el); });
   }
 })();
 </script>
