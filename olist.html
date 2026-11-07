@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olist Delivery Performance — Mohammed Alharbi</title>
+<meta name="description" content="Power BI dashboard analysing 96K e-commerce orders: late deliveries, causes and impact on ratings.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Olist Delivery Performance — Mohammed Alharbi">
+<meta property="og:description" content="Power BI dashboard analysing 96K e-commerce orders: late deliveries, causes and impact on ratings.">
+<meta property="og:image" content="https://dsmohammedharbi.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="projects" data-title-ar="أداء التوصيل في Olist — محمد الحربي">
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><span class="mark">M</span><span data-ar="محمد الحربي">Mohammed Alharbi</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="projects.html" data-nav="projects" data-ar="المشاريع">Projects</a></li>
+      <li><a href="experience.html" data-nav="experience" data-ar="الخبرة">Experience</a></li>
+      <li><a href="contact.html" data-nav="contact" data-ar="تواصل">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="icon-btn" id="langBtn" aria-label="Switch language">ع</button>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="sheet" id="sheet">
+  <button class="icon-btn sheet-close" id="sheetClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <a href="index.html" data-nav="home" data-ar="الرئيسية">Home</a>
+  <a href="projects.html" data-nav="projects" data-ar="المشاريع">Projects</a>
+  <a href="experience.html" data-nav="experience" data-ar="الخبرة">Experience</a>
+  <a href="contact.html" data-nav="contact" data-ar="تواصل">Contact</a>
+</div>
+
+<main>
+<div class="wrap">
+  <header class="page-head rv">
+    <a class="back" href="projects.html" data-ar="→ كل المشاريع">← All projects</a><br>
+    <div class="chips" style="margin-bottom:16px"><span class="chip hl">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip" data-ar="نمذجة البيانات">Data modeling</span></div>
+    <h1 data-ar="أداء التوصيل في Olist">Olist Delivery Performance</h1>
+    <p data-ar="تحليل حوالي 96 ألف طلب لمتجر إلكتروني برازيلي: كم مرة تتأخر الطلبات، وليش، وكم يكلّف هذا من رضا العميل.">An analysis of ~96,000 orders from a Brazilian e-commerce marketplace: how often orders arrive late, why, and what it costs in customer satisfaction.</p>
+    <div class="p-actions">
+      <a class="btn btn-dark btn-sm" href="olist_operations.pbix" download><svg viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span data-ar="تحميل ملف Power BI">Download Power BI file</span></a>
+      <a class="btn btn-line btn-sm" href="olist_operations.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg><span data-ar="نسخة PDF">PDF version</span></a>
+    </div>
+  </header>
+
+  <section class="sec rv" style="padding-top:0">
+    <div class="viewer">
+      <div class="tabs">
+        <button class="tab on" data-ar="نظرة عامة">Overview</button>
+        <button class="tab" data-ar="أين ومتى">Where &amp; When</button>
+        <button class="tab" data-ar="البائعون">Sellers</button>
+      </div>
+      <a class="shot on" href="images/olist-overview.jpg" target="_blank" rel="noopener" data-cap-en="Headline KPIs, how lateness affects ratings, and where the time goes — with the seller or in shipping." data-cap-ar="المؤشرات الرئيسية، وأثر التأخير على التقييم، ووين يروح الوقت: عند البائع ولا في الشحن."><img src="images/olist-overview.jpg" alt="Overview page" loading="lazy"><span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+      <a class="shot" href="images/olist-where-when.jpg" target="_blank" rel="noopener" data-cap-en="Late rate by customer state, same-state vs cross-state orders, and the monthly trend." data-cap-ar="نسبة التأخير حسب ولاية العميل، والطلبات داخل الولاية مقابل بين الولايات، والتغير الشهري."><img src="images/olist-where-when.jpg" alt="Where and When page" loading="lazy"><span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+      <a class="shot" href="images/olist-sellers.jpg" target="_blank" rel="noopener" data-cap-en="A seller scorecard, and how the late rate climbs with seller prep time." data-cap-ar="جدول تقييم البائعين، وكيف ترتفع نسبة التأخير مع وقت تجهيز البائع."><img src="images/olist-sellers.jpg" alt="Sellers page" loading="lazy"><span class="zoom" data-ar="عرض بالحجم الكامل ↗">View full size ↗</span></a>
+      <p class="shot-cap" id="shotCap"></p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <h2 class="sec-title rv" data-ar="أهم النتائج">Key findings</h2>
+    <div class="findings">
+      <div class="finding rv"><b>8.1%</b><strong data-ar="من الطلبات توصل متأخرة">of orders arrive late</strong>
+        <p data-ar="والطلبات المتأخرة تقييمها 2.6 من 5، مقابل 4.3 للي توصل في وقتها.">And late orders are rated 2.6 / 5, compared with 4.3 for on-time orders.</p></div>
+      <div class="finding rv"><b>25 vs 7</b><strong data-ar="أيام في الشحن">days in shipping</strong>
+        <p data-ar="الشحن هو سبب أغلب التأخير، مو البائعين. والطلبات بين الولايات تتأخر أكثر بحوالي 50%.">Shipping, not sellers, drives most of the delay — and cross-state orders are late about 50% more often.</p></div>
+      <div class="finding rv"><b>38%</b><strong data-ar="عند البائعين البطيئين">with slow sellers</strong>
+        <p data-ar="الطلب اللي يمسكه البائع 11 يوم أو أكثر يتأخر 38% من المرات، مقابل أقل من 6% للي ينشحن خلال يوم.">Orders held 11+ days by the seller are late 38% of the time, vs under 6% when shipped within a day.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <h2 class="sec-title rv" data-ar="التوصيات">Recommendations</h2>
+    <div class="recs">
+      <div class="rec rv"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p data-ar="زيادة طاقة الشحن قبل مواسم الذروة، ومراجعة شركات الشحن للمناطق البعيدة.">Add carrier capacity before peak seasons, and review carriers serving distant regions.</p></div>
+      <div class="rec rv"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p data-ar="تحديد حد أقصى لوقت تجهيز البائع، ومتابعة اللي يتجاوزونه.">Set a maximum prep time for sellers, and follow up with those who exceed it.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <details class="more-box rv">
+      <summary><span><span data-ar="طريقة البناء">How it was built</span> <span class="hint" data-ar="· للمهتمين بالتفاصيل التقنية">· for the technical details</span></span></summary>
+      <div class="in">
+        <div class="built">
+          <div class="bcard"><h5 data-ar="تجهيز البيانات · Power Query">Data prep · Power Query</h5>
+            <ul data-ar="<li>5 جداول، والطلبات اللي وصلت بس</li><li>أعمدة Prep Days وShipping Days وIs Late</li><li>حوالي 1,350 طلب بتواريخ مستحيلة: فرّغت القيمة الغلط بدل حذف الطلب</li><li>حذف الأعمدة غير المستخدمة، فصغر الملف بحوالي الثلث</li>">
+              <li>5 tables, delivered orders only</li>
+              <li><code>Prep Days</code>, <code>Shipping Days</code> and <code>Is Late</code> columns</li>
+              <li>~1,350 orders with impossible timestamps: blanked the broken value instead of deleting the order</li>
+              <li>Removed unused columns, cutting the file size by about a third</li></ul></div>
+          <div class="bcard"><h5 data-ar="الموديل">Data model</h5>
+            <ul data-ar="<li>Star schema، وجدول الطلبات هو الـ Fact</li><li>فلترة باتجاه واحد افتراضياً</li><li>اتجاهين بين orders وorder_items عشان فلتر البائع يوصل للطلبات</li>">
+              <li>Star schema with <code>orders</code> as the fact table</li>
+              <li>Single-direction filters by default</li>
+              <li>Two-way filter between <code>orders</code> and <code>order_items</code> so seller filters reach order metrics</li></ul></div>
+          <div class="bcard"><h5>DAX</h5>
+            <ul data-ar="<li>مقاييس نسبة التأخير والمتوسطات والتقييم</li><li>التقييم يُحسب لكل طلب، لأن بعض الطلبات لها أكثر من تقييم</li><li>فئات لوقت التجهيز مع ترتيب مخصص</li>">
+              <li>Late rate, averages and rating measures</li>
+              <li>Rating averaged per order, since some orders have several reviews</li>
+              <li>Prep-time buckets with a custom sort order</li></ul>
+            <div class="dax"><span class="k">Avg Review Score</span> =<br><span class="f">AVERAGEX</span>(orders,<br>&nbsp;&nbsp;<span class="f">CALCULATE</span>(<span class="f">AVERAGE</span>(reviews[review_score])))</div></div>
+          <div class="bcard"><h5 data-ar="التصميم">Design</h5>
+            <ul data-ar="<li>ثيم مخصص وتخطيط ثابت</li><li>لون لكل معنى: الأحمر للتأخير، والرمادي للسياق</li><li>عناوين الرسومات تقول النتيجة</li><li>فلاتر مشتركة وأزرار تنقل بين الصفحات</li>">
+              <li>Custom theme and a fixed layout grid</li>
+              <li>One colour per meaning: red for late, grey for context</li>
+              <li>Chart titles state the finding</li>
+              <li>Synced filters and page navigation</li></ul></div>
+        </div>
+        <p class="src" data-ar='البيانات: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Olist Brazilian E-Commerce</a> من Kaggle، من يناير 2017 إلى أغسطس 2018 · <a href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener">ملفات المشروع على GitHub</a>'>Data: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Olist Brazilian E-Commerce</a> (Kaggle), Jan 2017 – Aug 2018 · <a href="https://github.com/DsMohammedHarbi/olist-delivery-performance" target="_blank" rel="noopener">Project files on GitHub</a></p>
+      </div>
+    </details>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span data-ar="محمد الحربي — محلل بيانات">Mohammed Alharbi — Data Analyst</span>
+    <span data-ar="مكة المكرمة، السعودية">Makkah, Saudi Arabia</span>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
